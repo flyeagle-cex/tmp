@@ -1,0 +1,18 @@
+{
+    "resolution": "540x960",
+    "portrait": true,
+    "originalVisual": true,
+    "directory": true,
+    "fiveCities": true,
+    "yangzhou": true,
+    "nanjing": true,
+    "returnDirectory": true,
+    "languageSwitch": true,
+    "quizEnglish": true,
+    "feedbackEnglish": true,
+    "videoNotRestarted": true,
+    "noExtraSubtitles": true,
+    "sound": true,
+    "passed": true,
+    "errors": []
+}

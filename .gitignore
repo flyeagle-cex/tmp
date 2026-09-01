@@ -1,17 +1,12 @@
 # Unity generated folders
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-!Builds/WebGL/Build/
-!Builds/WebGL/Build/**
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-[Mm]emoryCaptures/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/.vs/
 
-# IDE and generated project files
-.vs/
-.idea/
+# IDE generated files
 *.csproj
 *.sln
 *.suo
@@ -19,16 +14,11 @@
 *.userprefs
 *.pidb
 *.booproj
-*.tmp
 
-# Local reports and delivery artifacts
-output/
-tmp/
-Backups/
-QA/*.log
-QA/runtime-smoke-stage11-[0-9]*.json
-
-# OS metadata
+# OS files
 .DS_Store
 Thumbs.db
-Desktop.ini
+
+# Crash reports
+sysinfo.txt
+crashlytics-build.properties

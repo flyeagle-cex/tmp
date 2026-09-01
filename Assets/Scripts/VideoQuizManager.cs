@@ -1,600 +1,447 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
-public enum CityInteractionState
-{
-    Intro,
-    PlayingVideo,
-    ShowingQuestion,
-    ShowingFeedback,
-    Transitioning,
-    Completed
-}
-
 public class VideoQuizManager : MonoBehaviour
 {
-    [Header("=== Legacy scene references ===")]
+    [Header("=== UI组件 ===")]
     public VideoPlayer videoPlayer;
-    public GameObject questionPanel;
-    public Text questionText;
-    public Button[] answerButtons;
+    public GameObject questionPanel;        // 答题面板
+    public Text questionText;               // 题目文本
+    public Button[] answerButtons;          // 4个选项按钮
 
-    [Header("=== Legacy feedback UI ===")]
-    public GameObject correctPopup;
+    [Header("=== 反馈弹窗（独立UI）===")]
+    public GameObject correctPopup;         // ✅ 正确弹窗
     public Text correctPopupText;
-    public GameObject successPopup;
+    public GameObject successPopup;         // 🎉 鼓励语弹窗
     public Text successPopupText;
-    public GameObject errorPopup;
+    public GameObject errorPopup;           // ❌ 错误弹窗
     public Text errorPopupText;
 
-    [Header("=== Legacy completion UI ===")]
-    public GameObject completePopup;
-    public Text completePopupText;
-    public Button completeButton;
+    [Header("=== 全部完成弹窗 ===")]
+    public GameObject completePopup;        // 🏁 全部完成弹窗
+    public Text completePopupText;          // 可编辑的文本
+    public Button completeButton;           // 跳转按钮
 
-    [Header("=== Existing city content (preserved) ===")]
+    [Header("=== 题目数据（手动录入）===")]
     public List<QuizData> quizList = new List<QuizData>();
 
     [System.Serializable]
     public class QuizData
     {
+        [Header("视频 (直接拖入)")]
         public VideoClip videoClip;
+
+        [Header("题目 (最后一个视频可留空)")]
         [TextArea(2, 3)] public string question;
         public string[] answers = new string[4];
         public int correctIndex;
+
+        [Header("English UI text")]
+        [TextArea(2, 3)] public string questionEnglish;
+        public string[] answersEnglish = new string[4];
+
+        [Header("答对鼓励语")]
         [TextArea(2, 3)] public string successMessage = "太棒了！继续加油哦！";
+        [TextArea(2, 3)] public string successMessageEnglish;
     }
 
-    public CityInteractionState State { get; private set; }
+    // ===== 内部状态 =====
+    private int currentIndex = 0;
+    private bool isAnswering = false;
+    private bool isWaitingForRetry = false;
+    private string originalCompletePopupText;
+    private string originalCompleteButtonText;
 
-    private const float FadeOutDuration = 0.25f;
-    private const float FadeInDuration = 0.32f;
-    private const float PrepareTimeout = 15f;
-
-    private int currentIndex;
-    private bool lastAnswerCorrect;
-    private CityInteractionData cityData;
-    private ExhibitionCityView view;
-    private SubtitleManager subtitleManager;
-    private CultureCueManager cultureCueManager;
-    private TransitionController transitionController;
-    private RawImage videoImage;
-
-    private void Awake()
+    void Start()
     {
-        HideLegacyLayers();
-        NormalizeCanvas();
+        originalCompletePopupText = completePopupText != null ? completePopupText.text : string.Empty;
+        Text completeLabel = completeButton != null ? completeButton.GetComponentInChildren<Text>(true) : null;
+        originalCompleteButtonText = completeLabel != null ? completeLabel.text : string.Empty;
 
-        LanguageManager.EnsureExists();
-        string sceneName = SceneManager.GetActiveScene().name;
-        cityData = CityDataRepository.Load(sceneName);
-        if (cityData == null || cityData.segments == null || cityData.segments.Length < quizList.Count)
-        {
-            cityData = BuildFallbackData(sceneName);
-        }
+        // 初始化UI：隐藏所有弹窗
+        questionPanel.SetActive(false);
+        HideAllPopups();
+        if (completePopup != null) completePopup.SetActive(false);
 
-        MergeLegacyChineseContent();
-
-        if (videoPlayer == null)
-        {
-            Debug.LogError("VideoQuizManager requires a VideoPlayer reference.");
-            enabled = false;
-            return;
-        }
-
-        videoPlayer.playOnAwake = false;
-        videoPlayer.playbackSpeed = 1f;
-        videoPlayer.isLooping = false;
-        videoPlayer.waitForFirstFrame = true;
-        videoPlayer.skipOnDrop = false;
-
-        AudioController audioController = videoPlayer.GetComponent<AudioController>();
-        if (audioController == null)
-        {
-            audioController = videoPlayer.gameObject.AddComponent<AudioController>();
-        }
-        audioController.Initialize(videoPlayer, false);
-
-        videoImage = videoPlayer.GetComponent<RawImage>();
-        view = gameObject.AddComponent<ExhibitionCityView>();
-        view.Initialize(transform as RectTransform, cityData);
-        view.StartRequested += OnStartRequested;
-        view.AnswerRequested += OnAnswerRequested;
-        view.FeedbackActionRequested += OnFeedbackActionRequested;
-        view.CompleteRequested += OnCompleteRequested;
-        view.ExitRequested += OnExitRequested;
-        view.ExitConfirmed += OnExitConfirmed;
-
-        subtitleManager = gameObject.AddComponent<SubtitleManager>();
-        subtitleManager.Initialize(videoPlayer, view);
-
-        cultureCueManager = gameObject.AddComponent<CultureCueManager>();
-        cultureCueManager.Initialize(videoPlayer, view);
-
-        transitionController = gameObject.AddComponent<TransitionController>();
-        transitionController.Initialize(view.FadeGroup);
-
+        // 绑定视频结束事件
         videoPlayer.loopPointReached += OnVideoFinished;
-        videoPlayer.prepareCompleted += OnVideoPrepared;
-        videoPlayer.errorReceived += OnVideoError;
 
-        currentIndex = 0;
-        State = CityInteractionState.Intro;
-        PrepareInitialFrame();
+        // 绑定按钮事件
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            int index = i;
+            answerButtons[i].onClick.AddListener(() => OnAnswerSelected(index));
+        }
+
+        // 绑定完成按钮事件
+        if (completeButton != null)
+        {
+            completeButton.onClick.AddListener(OnCompleteButtonClicked);
+        }
+
+        LanguageManager language = LanguageManager.EnsureExists();
+        language.LanguageChanged -= RefreshLanguage;
+        language.LanguageChanged += RefreshLanguage;
+
+        // 如果列表为空，添加示例数据
+        if (quizList.Count == 0) AddExampleData();
+
+        // 开始播放第一个视频
+        PlayVideoByIndex(0);
+        RefreshLanguage();
     }
 
-    private void PrepareInitialFrame()
+    void HideAllPopups()
     {
-        QuizData legacy = GetLegacyQuiz(currentIndex);
-        VideoSegmentData segment = GetSegment(currentIndex);
-        if (legacy == null || !ConfigureMedia(segment))
-        {
-            Debug.LogError("The first city video is missing.");
-            return;
-        }
-
-        subtitleManager.SetSegment(segment);
-        cultureCueManager.SetSegment(segment);
-        subtitleManager.SetPlaybackVisible(false);
-        videoPlayer.Prepare();
-    }
-
-    private void OnStartRequested()
-    {
-        if (State != CityInteractionState.Intro || transitionController.IsBusy)
-        {
-            return;
-        }
-
-        StartCoroutine(BeginSegment(currentIndex));
-    }
-
-    private IEnumerator BeginSegment(int index)
-    {
-        QuizData legacy = GetLegacyQuiz(index);
-        VideoSegmentData segment = GetSegment(index);
-        if (legacy == null || segment == null || string.IsNullOrWhiteSpace(segment.mediaFile))
-        {
-            Debug.LogError("Missing media file at segment " + index + ".");
-            ShowComplete();
-            yield break;
-        }
-
-        State = CityInteractionState.Transitioning;
-        view.SetControlsInteractable(false);
-        subtitleManager.SetPlaybackVisible(false);
-        yield return transitionController.FadeTo(1f, FadeOutDuration);
-
-        videoPlayer.Stop();
-        if (!ConfigureMedia(segment))
-        {
-            Debug.LogError("Unable to configure media at segment " + index + ".");
-            ShowComplete();
-            yield break;
-        }
-        videoPlayer.playbackSpeed = 1f;
-        subtitleManager.SetSegment(segment);
-        cultureCueManager.SetSegment(segment);
-        videoPlayer.Prepare();
-
-        float elapsed = 0f;
-        while (!videoPlayer.isPrepared && elapsed < PrepareTimeout)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            yield return null;
-        }
-
-        if (!videoPlayer.isPrepared)
-        {
-            Debug.LogError("Video preparation timed out: " + segment.mediaFile);
-            view.SetControlsInteractable(true);
-            yield return transitionController.FadeTo(0f, FadeInDuration);
-            ShowComplete();
-            yield break;
-        }
-
-        ApplyPreparedAspect();
-        view.ShowPlaying(segment);
-        yield return transitionController.FadeTo(0f, FadeInDuration);
-
-        videoPlayer.Play();
-        subtitleManager.SetPlaybackVisible(true);
-        view.SetControlsInteractable(true);
-        State = CityInteractionState.PlayingVideo;
-        Debug.Log("Playing city segment: " + segment.mediaFile);
-    }
-
-    private void OnVideoPrepared(VideoPlayer player)
-    {
-        ApplyPreparedAspect();
-
-        if (State == CityInteractionState.Intro)
-        {
-            try
-            {
-                player.frame = 0;
-                player.StepForward();
-                player.Pause();
-            }
-            catch (System.Exception exception)
-            {
-                Debug.LogWarning("First-frame preview is not available on this platform: " + exception.Message);
-            }
-        }
-    }
-
-    private void OnVideoFinished(VideoPlayer player)
-    {
-        if (State != CityInteractionState.PlayingVideo)
-        {
-            return;
-        }
-
-        subtitleManager.SetPlaybackVisible(false);
-        bool isLast = currentIndex >= quizList.Count - 1;
-        VideoSegmentData segment = GetSegment(currentIndex);
-
-        if (isLast)
-        {
-            ShowComplete();
-            return;
-        }
-
-        if (segment == null || segment.question == null || string.IsNullOrEmpty(segment.question.questionId))
-        {
-            currentIndex++;
-            StartCoroutine(BeginSegment(currentIndex));
-            return;
-        }
-
-        State = CityInteractionState.ShowingQuestion;
-        view.ShowQuestion(segment.question);
-    }
-
-    private void OnAnswerRequested(string selectedOptionId)
-    {
-        if (State != CityInteractionState.ShowingQuestion)
-        {
-            return;
-        }
-
-        VideoSegmentData segment = GetSegment(currentIndex);
-        if (segment == null || segment.question == null)
-        {
-            return;
-        }
-
-        lastAnswerCorrect = string.Equals(selectedOptionId, segment.question.correctOptionId, System.StringComparison.Ordinal);
-        State = CityInteractionState.ShowingFeedback;
-
-        if (lastAnswerCorrect)
-        {
-            view.ShowFeedback(true, segment.question.successZh, segment.question.successEn);
-        }
-        else
-        {
-            view.ShowFeedback(false, "答案不对，再看看题目中的文化线索吧。", "That is not the answer. Look at the cultural clue and try again.");
-        }
-    }
-
-    private void OnFeedbackActionRequested()
-    {
-        if (State != CityInteractionState.ShowingFeedback || transitionController.IsBusy)
-        {
-            return;
-        }
-
-        if (!lastAnswerCorrect)
-        {
-            State = CityInteractionState.ShowingQuestion;
-            VideoSegmentData currentSegment = GetSegment(currentIndex);
-            if (currentSegment != null && currentSegment.question != null)
-            {
-                view.ShowQuestion(currentSegment.question);
-            }
-            return;
-        }
-
-        currentIndex++;
-        if (currentIndex < quizList.Count)
-        {
-            StartCoroutine(BeginSegment(currentIndex));
-        }
-        else
-        {
-            ShowComplete();
-        }
-    }
-
-    private void ShowComplete()
-    {
-        videoPlayer.Pause();
-        subtitleManager.SetPlaybackVisible(false);
-        State = CityInteractionState.Completed;
-
-        NavigationManager.EnsureExists().MarkCurrentCityCompleted();
-
-        string nextSceneName = GetNextSceneName();
-        if (string.IsNullOrEmpty(nextSceneName))
-        {
-            view.ShowComplete(string.Empty, string.Empty);
-            return;
-        }
-
-        CityInteractionData nextData = CityDataRepository.Load(nextSceneName);
-        if (nextData != null)
-        {
-            view.ShowComplete(nextData.cityNameZh, nextData.cityNameEn);
-        }
-        else
-        {
-            view.ShowComplete(nextSceneName, nextSceneName);
-        }
-    }
-
-    private void OnCompleteRequested()
-    {
-        if (State != CityInteractionState.Completed || transitionController.IsBusy)
-        {
-            return;
-        }
-
-        NavigationManager.EnsureExists().ReturnToDirectory();
-    }
-
-    private void OnExitRequested()
-    {
-        if (!transitionController.IsBusy)
-        {
-            view.ShowExitConfirmation();
-        }
-    }
-
-    private void OnExitConfirmed()
-    {
-        if (!transitionController.IsBusy)
-        {
-            NavigationManager.EnsureExists().ReturnToDirectory();
-        }
-    }
-
-    private void Update()
-    {
-        if (!Input.GetKeyDown(KeyCode.Escape) || view == null)
-        {
-            return;
-        }
-
-        if (view.SettingsVisible || view.ExitConfirmationVisible)
-        {
-            view.CloseTopModal();
-        }
-        else
-        {
-            OnExitRequested();
-        }
-    }
-
-    private void NormalizeCanvas()
-    {
-        CanvasScaler scaler = GetComponent<CanvasScaler>();
-        if (scaler == null)
-        {
-            scaler = gameObject.AddComponent<CanvasScaler>();
-        }
-
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920f, 1080f);
-        scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
-        scaler.matchWidthOrHeight = 0.5f;
-    }
-
-    private void HideLegacyLayers()
-    {
-        if (questionPanel != null) questionPanel.SetActive(false);
         if (correctPopup != null) correctPopup.SetActive(false);
         if (successPopup != null) successPopup.SetActive(false);
         if (errorPopup != null) errorPopup.SetActive(false);
-        if (completePopup != null) completePopup.SetActive(false);
     }
 
-    private void MergeLegacyChineseContent()
+    void AddExampleData()
     {
-        for (int i = 0; i < quizList.Count && i < cityData.segments.Length; i++)
+        // 示例1：正常答题
+        QuizData q1 = new QuizData
         {
-            QuizData legacy = quizList[i];
-            VideoSegmentData segment = cityData.segments[i];
-            if (segment == null || legacy == null)
-            {
-                continue;
-            }
-
-            if (string.IsNullOrEmpty(legacy.question))
-            {
-                segment.question = null;
-                continue;
-            }
-
-            if (segment.question == null)
-            {
-                segment.question = new QuestionData();
-            }
-
-            QuestionData question = segment.question;
-            if (string.IsNullOrEmpty(question.questionId))
-            {
-                question.questionId = cityData.cityId + "_q" + (i + 1).ToString("00");
-            }
-
-            question.questionZh = legacy.question;
-            question.successZh = legacy.successMessage;
-            int answerCount = legacy.answers != null ? legacy.answers.Length : 0;
-
-            if (question.options == null || question.options.Length != answerCount)
-            {
-                OptionData[] rebuilt = new OptionData[answerCount];
-                for (int optionIndex = 0; optionIndex < answerCount; optionIndex++)
-                {
-                    rebuilt[optionIndex] = new OptionData
-                    {
-                        optionId = "option_" + (char)('a' + optionIndex),
-                        textEn = legacy.answers[optionIndex]
-                    };
-                }
-                question.options = rebuilt;
-            }
-
-            for (int optionIndex = 0; optionIndex < answerCount; optionIndex++)
-            {
-                if (question.options[optionIndex] == null)
-                {
-                    question.options[optionIndex] = new OptionData();
-                }
-                if (string.IsNullOrEmpty(question.options[optionIndex].optionId))
-                {
-                    question.options[optionIndex].optionId = "option_" + (char)('a' + optionIndex);
-                }
-                question.options[optionIndex].textZh = legacy.answers[optionIndex];
-            }
-
-            if (legacy.correctIndex >= 0 && legacy.correctIndex < question.options.Length)
-            {
-                question.correctOptionId = question.options[legacy.correctIndex].optionId;
-            }
-        }
-    }
-
-    private CityInteractionData BuildFallbackData(string sceneName)
-    {
-        CityInteractionData fallback = new CityInteractionData
-        {
-            cityId = "city_" + sceneName,
-            sceneName = sceneName,
-            cityNameZh = GetFallbackCityName(sceneName, false),
-            cityNameEn = GetFallbackCityName(sceneName, true),
-            titleZh = "江南城市文化互动体验",
-            titleEn = "Jiangnan City Cultural Experience",
-            segments = new VideoSegmentData[quizList.Count]
+            question = "大运河最早开凿于哪个朝代？",
+            answers = new string[] { "隋朝", "唐朝", "元朝", "明朝" },
+            correctIndex = 0,
+            successMessage = "太棒了！大运河可是古人用双手创造的奇迹哦！"
         };
 
-        for (int i = 0; i < quizList.Count; i++)
+        // 示例2：正常答题
+        QuizData q2 = new QuizData
         {
-            fallback.segments[i] = new VideoSegmentData
-            {
-                segmentId = fallback.cityId + "_segment_" + (i + 1).ToString("00"),
-                chapterZh = "文化章节 " + (i + 1),
-                chapterEn = "Chapter " + (i + 1),
-                subtitles = new SubtitleCue[0]
-            };
+            question = "大运河是世界上最长的人工运河，对吗？",
+            answers = new string[] { "✅ 正确", "❌ 错误" },
+            correctIndex = 0,
+            successMessage = "没错！大运河确实是世界之最！"
+        };
 
-            QuizData legacy = quizList[i];
-            if (legacy != null && !string.IsNullOrEmpty(legacy.question))
-            {
-                int count = legacy.answers != null ? legacy.answers.Length : 0;
-                OptionData[] options = new OptionData[count];
-                for (int optionIndex = 0; optionIndex < count; optionIndex++)
-                {
-                    options[optionIndex] = new OptionData
-                    {
-                        optionId = "option_" + (char)('a' + optionIndex),
-                        textZh = legacy.answers[optionIndex],
-                        textEn = legacy.answers[optionIndex]
-                    };
-                }
+        // 示例3：最后一个视频（不答题）
+        QuizData q3 = new QuizData
+        {
+            // 视频拖入即可，题目留空
+            question = "",
+            answers = new string[] { "" },
+            correctIndex = 0,
+            successMessage = ""
+        };
 
-                fallback.segments[i].question = new QuestionData
-                {
-                    questionId = fallback.cityId + "_q" + (i + 1).ToString("00"),
-                    questionZh = legacy.question,
-                    questionEn = legacy.question,
-                    options = options,
-                    correctOptionId = count > 0 ? options[Mathf.Clamp(legacy.correctIndex, 0, count - 1)].optionId : string.Empty,
-                    successZh = legacy.successMessage,
-                    successEn = legacy.successMessage
-                };
+        quizList.Add(q1);
+        quizList.Add(q2);
+        quizList.Add(q3);
+    }
+
+    // ===== 播放指定索引的视频 =====
+    void PlayVideoByIndex(int index)
+    {
+        if (index >= quizList.Count)
+        {
+            // 所有视频播放完毕（安全兜底）
+            ShowCompletePopup();
+            return;
+        }
+
+        videoPlayer.clip = quizList[index].videoClip;
+        videoPlayer.Play();
+        Debug.Log("▶️ 播放视频: " + quizList[index].videoClip.name);
+    }
+
+    // ===== 视频播放结束回调 =====
+    void OnVideoFinished(VideoPlayer vp)
+    {
+        // ✅ 判断是否是最后一个视频
+        bool isLastVideo = (currentIndex == quizList.Count - 1);
+
+        if (isLastVideo)
+        {
+            // 🏁 最后一个视频：直接弹完成窗，不答题
+            Debug.Log("🏁 最后一个视频播放完毕，直接弹窗！");
+            ShowCompletePopup();
+        }
+        else
+        {
+            // 其他视频：正常答题
+            Debug.Log("⏹️ 视频结束，显示题目");
+            ShowQuestion();
+        }
+    }
+
+    // ===== 显示题目（动态控制选项显示） =====
+    void ShowQuestion()
+    {
+        if (currentIndex >= quizList.Count) return;
+
+        QuizData data = quizList[currentIndex];
+        ApplyQuestionText(data);
+
+        // 根据实际选项数量，动态显示/隐藏按钮
+        int answerCount = data.answers.Length;
+
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            if (i < answerCount && !string.IsNullOrEmpty(data.answers[i]))
+            {
+                answerButtons[i].gameObject.SetActive(true);
+                answerButtons[i].GetComponentInChildren<Text>().text = GetAnswer(data, i);
+            }
+            else
+            {
+                answerButtons[i].gameObject.SetActive(false);
             }
         }
 
-        return fallback;
+        // 重置UI状态
+        HideAllPopups();
+        questionPanel.SetActive(true);
+        isAnswering = true;
+        isWaitingForRetry = false;
     }
 
-    private static string GetFallbackCityName(string sceneName, bool english)
+    // ===== 点击选项 =====
+    void OnAnswerSelected(int selectedIndex)
     {
-        switch (sceneName)
+        if (!isAnswering || isWaitingForRetry) return;
+
+        QuizData data = quizList[currentIndex];
+        bool isCorrect = (selectedIndex == data.correctIndex);
+
+        if (isCorrect)
         {
-            case "1": return english ? "Yangzhou" : "扬州";
-            case "2": return english ? "Huai'an" : "淮安";
-            case "3": return english ? "Wuxi" : "无锡";
-            case "4": return english ? "Suzhou" : "苏州";
-            case "5": return english ? "Nanjing" : "南京";
-            default: return sceneName;
+            // ✅ 答对流程
+            isAnswering = false;
+            questionPanel.SetActive(false);
+
+            // 步骤1：显示"正确"弹窗
+            ShowCorrectPopup();
+
+            // 步骤2：1秒后显示鼓励语弹窗
+            StartCoroutine(ShowSuccessPopupAfterDelay(1f));
+        }
+        else
+        {
+            // ❌ 答错：显示错误弹窗，2秒后重试
+            ShowErrorPopup();
+            isAnswering = false;
+            isWaitingForRetry = true;
+            StartCoroutine(DelayRetry(2f));
         }
     }
 
-    private void ApplyPreparedAspect()
+    // ===== 显示正确弹窗 =====
+    void ShowCorrectPopup()
     {
-        if (view != null && videoImage != null && videoPlayer.height > 0)
+        if (correctPopup != null)
         {
-            view.SetVideoAspect(videoImage, (float)videoPlayer.width / videoPlayer.height);
+            correctPopup.SetActive(true);
+            if (correctPopupText != null)
+                correctPopupText.text = LanguageManager.EnsureExists().IsEnglish ? "✅ Correct!" : "✅ 回答正确！";
         }
     }
 
-    private bool ConfigureMedia(VideoSegmentData segment)
+    // ===== 1秒后显示鼓励语弹窗 =====
+    IEnumerator ShowSuccessPopupAfterDelay(float delay)
     {
-        if (segment == null || string.IsNullOrWhiteSpace(segment.mediaFile))
+        yield return new WaitForSeconds(delay);
+
+        // 隐藏正确弹窗
+        if (correctPopup != null) correctPopup.SetActive(false);
+
+        // 显示鼓励语弹窗
+        if (successPopup != null)
         {
-            return false;
+            QuizData data = quizList[currentIndex];
+            successPopup.SetActive(true);
+            if (successPopupText != null)
+                successPopupText.text = GetSuccessMessage(data);
         }
 
-        string url = MediaPathResolver.GetUrl(segment.mediaFile);
-        if (string.IsNullOrEmpty(url))
+        // 1.5秒后进入下一题
+        StartCoroutine(DelayNextQuestion(1.5f));
+    }
+
+    // ===== 显示错误弹窗 =====
+    void ShowErrorPopup()
+    {
+        if (errorPopup != null)
         {
-            return false;
+            errorPopup.SetActive(true);
+            if (errorPopupText != null)
+                errorPopupText.text = LanguageManager.EnsureExists().IsEnglish ? "❌ Please try again." : "❌ 再想想哦～";
+        }
+    }
+
+    // ===== 协程：答对后进入下一题 =====
+    IEnumerator DelayNextQuestion(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // 隐藏鼓励语弹窗
+        if (successPopup != null) successPopup.SetActive(false);
+
+        // 移动到下一题
+        currentIndex++;
+
+        // 播放下一个视频
+        PlayVideoByIndex(currentIndex);
+    }
+
+    // ===== 协程：答错后2秒重试 =====
+    IEnumerator DelayRetry(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // 隐藏错误弹窗
+        if (errorPopup != null) errorPopup.SetActive(false);
+
+        // 重新显示当前题目
+        isWaitingForRetry = false;
+        isAnswering = true;
+        questionPanel.SetActive(true);
+
+        // 刷新题目内容
+        QuizData data = quizList[currentIndex];
+        ApplyQuestionText(data);
+
+        int answerCount = data.answers.Length;
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            if (i < answerCount && !string.IsNullOrEmpty(data.answers[i]))
+            {
+                answerButtons[i].gameObject.SetActive(true);
+                answerButtons[i].GetComponentInChildren<Text>().text = GetAnswer(data, i);
+            }
+            else
+            {
+                answerButtons[i].gameObject.SetActive(false);
+            }
         }
 
-        videoPlayer.Stop();
-        videoPlayer.clip = null;
-        videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = url;
-        if (view != null && videoImage != null)
+        Debug.Log("🔄 重新答题");
+    }
+
+    // ===== 🏁 显示全部完成弹窗 =====
+    void ShowCompletePopup()
+    {
+        // 隐藏所有其他UI
+        questionPanel.SetActive(false);
+        HideAllPopups();
+
+        if (completePopup != null)
         {
-            view.SetVideoAspect(videoImage, 9f / 16f);
+            completePopup.SetActive(true);
+
+            // 如果设置了自定义文本，使用它；否则使用默认文本
+            if (completePopupText != null && string.IsNullOrEmpty(completePopupText.text))
+            {
+                completePopupText.text = LanguageManager.EnsureExists().IsEnglish ? "🎉 Continue to the next city" : "🎉 前往下一站";
+            }
         }
-        return true;
+        RefreshCompleteButtonText();
+        Debug.Log("🏁 所有视频已完成！");
     }
 
-    private QuizData GetLegacyQuiz(int index)
+    // ===== 点击完成按钮：跳转到下一个场景 =====
+    void OnCompleteButtonClicked()
     {
-        return index >= 0 && index < quizList.Count ? quizList[index] : null;
-    }
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
 
-    private VideoSegmentData GetSegment(int index)
-    {
-        return cityData != null && cityData.segments != null && index >= 0 && index < cityData.segments.Length
-            ? cityData.segments[index]
-            : null;
-    }
-
-    private string GetNextSceneName()
-    {
-        int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextIndex >= SceneManager.sceneCountInBuildSettings)
+        // 检查下一个场景是否存在
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            return string.Empty;
+            Debug.Log("🚀 跳转到场景: " + nextSceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
         }
-
-        string path = SceneUtility.GetScenePathByBuildIndex(nextIndex);
-        return string.IsNullOrEmpty(path) ? string.Empty : Path.GetFileNameWithoutExtension(path);
+        else
+        {
+            Debug.LogWarning("⚠️ 没有下一个场景！当前场景索引: " + currentSceneIndex);
+            // 可以在这里做其他处理，比如返回主菜单
+            // SceneManager.LoadScene(0);
+        }
     }
 
-    private void OnVideoError(VideoPlayer player, string message)
+    private void ApplyQuestionText(QuizData data)
     {
-        Debug.LogError("VideoPlayer error in " + cityData.cityId + ": " + message);
+        if (questionText != null)
+        {
+            questionText.text = LanguageManager.EnsureExists().IsEnglish && !string.IsNullOrEmpty(data.questionEnglish)
+                ? data.questionEnglish
+                : data.question;
+        }
+    }
+
+    private string GetAnswer(QuizData data, int index)
+    {
+        if (LanguageManager.EnsureExists().IsEnglish && data.answersEnglish != null &&
+            index < data.answersEnglish.Length && !string.IsNullOrEmpty(data.answersEnglish[index]))
+        {
+            return data.answersEnglish[index];
+        }
+        return data.answers[index];
+    }
+
+    private string GetSuccessMessage(QuizData data)
+    {
+        return LanguageManager.EnsureExists().IsEnglish && !string.IsNullOrEmpty(data.successMessageEnglish)
+            ? data.successMessageEnglish
+            : data.successMessage;
+    }
+
+    private void RefreshLanguage()
+    {
+        if (currentIndex < quizList.Count)
+        {
+            QuizData data = quizList[currentIndex];
+            if (questionPanel != null && questionPanel.activeSelf)
+            {
+                ApplyQuestionText(data);
+                for (int i = 0; i < answerButtons.Length; i++)
+                {
+                    if (answerButtons[i] != null && answerButtons[i].gameObject.activeSelf && i < data.answers.Length)
+                    {
+                        Text label = answerButtons[i].GetComponentInChildren<Text>();
+                        if (label != null) label.text = GetAnswer(data, i);
+                    }
+                }
+            }
+            if (successPopup != null && successPopup.activeSelf && successPopupText != null)
+            {
+                successPopupText.text = GetSuccessMessage(data);
+            }
+        }
+
+        if (correctPopup != null && correctPopup.activeSelf && correctPopupText != null)
+        {
+            correctPopupText.text = LanguageManager.EnsureExists().IsEnglish ? "✅ Correct!" : "✅ 回答正确！";
+        }
+        if (errorPopup != null && errorPopup.activeSelf && errorPopupText != null)
+        {
+            errorPopupText.text = LanguageManager.EnsureExists().IsEnglish ? "❌ Please try again." : "❌ 再想想哦～";
+        }
+        if (completePopup != null && completePopup.activeSelf && completePopupText != null)
+        {
+            completePopupText.text = LanguageManager.EnsureExists().IsEnglish
+                ? (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1
+                    ? "🎉 The five-city journey is complete"
+                    : "🎉 Continue to the next city")
+                : (!string.IsNullOrEmpty(originalCompletePopupText) ? originalCompletePopupText : "🎉 前往下一站");
+            RefreshCompleteButtonText();
+        }
+    }
+
+    private void RefreshCompleteButtonText()
+    {
+        Text label = completeButton != null ? completeButton.GetComponentInChildren<Text>(true) : null;
+        if (label == null) return;
+        label.text = LanguageManager.EnsureExists().IsEnglish
+            ? (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1 ? "FINISH" : "NEXT CITY")
+            : originalCompleteButtonText;
     }
 
     private void OnDestroy()
@@ -602,18 +449,17 @@ public class VideoQuizManager : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached -= OnVideoFinished;
-            videoPlayer.prepareCompleted -= OnVideoPrepared;
-            videoPlayer.errorReceived -= OnVideoError;
         }
-
-        if (view != null)
+        if (LanguageManager.Instance != null)
         {
-            view.StartRequested -= OnStartRequested;
-            view.AnswerRequested -= OnAnswerRequested;
-            view.FeedbackActionRequested -= OnFeedbackActionRequested;
-            view.CompleteRequested -= OnCompleteRequested;
-            view.ExitRequested -= OnExitRequested;
-            view.ExitConfirmed -= OnExitConfirmed;
+            LanguageManager.Instance.LanguageChanged -= RefreshLanguage;
         }
+    }
+
+    // ===== 编辑器辅助 =====
+    [ContextMenu("添加示例题目")]
+    void AddExampleDataMenu()
+    {
+        AddExampleData();
     }
 }
