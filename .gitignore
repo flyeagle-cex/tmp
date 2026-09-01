@@ -24,6 +24,8 @@
 output/
 tmp/
 Backups/
+QA/*.log
+QA/runtime-smoke-stage11-[0-9]*.json
 
 # OS metadata
 .DS_Store

@@ -4,13 +4,13 @@ using UnityEngine.Video;
 public sealed class SubtitleManager : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
-    private UnifiedCityView view;
+    private ExhibitionCityView view;
     private VideoSegmentData segment;
     private LanguageManager settings;
     private bool playbackVisible;
     private int currentCueIndex = -1;
 
-    public void Initialize(VideoPlayer player, UnifiedCityView cityView)
+    public void Initialize(VideoPlayer player, ExhibitionCityView cityView)
     {
         videoPlayer = player;
         view = cityView;

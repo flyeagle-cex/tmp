@@ -4,6 +4,7 @@ using UnityEngine;
 public sealed class TransitionController : MonoBehaviour
 {
     private CanvasGroup fadeGroup;
+    private RectTransform[] ripples;
 
     public bool IsBusy { get; private set; }
 
@@ -13,6 +14,12 @@ public sealed class TransitionController : MonoBehaviour
         fadeGroup.alpha = 0f;
         fadeGroup.blocksRaycasts = false;
         fadeGroup.interactable = false;
+        ripples = new RectTransform[3];
+        for (int i = 0; i < ripples.Length; i++)
+        {
+            Transform ripple = group.transform.Find("Ripple" + (i + 1));
+            ripples[i] = ripple as RectTransform;
+        }
     }
 
     public IEnumerator FadeTo(float targetAlpha, float duration)
@@ -32,8 +39,16 @@ public sealed class TransitionController : MonoBehaviour
         while (elapsed < safeDuration)
         {
             elapsed += Time.unscaledDeltaTime;
-            float t = Mathf.Clamp01(elapsed / safeDuration);
+            float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / safeDuration));
             fadeGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+            for (int i = 0; i < ripples.Length; i++)
+            {
+                if (ripples[i] != null)
+                {
+                    float pulse = 1f + Mathf.Sin((t + i * 0.17f) * Mathf.PI) * (0.05f + i * 0.025f);
+                    ripples[i].localScale = new Vector3(pulse, 1f, 1f);
+                }
+            }
             yield return null;
         }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -46,6 +47,7 @@ public static class JiangnanProjectValidator
 
         ValidateBuildSettings(report);
         ValidateFont(report);
+        ValidateCityRegistry(report);
 
         for (int cityIndex = 0; cityIndex < 5; cityIndex++)
         {
@@ -245,6 +247,50 @@ public static class JiangnanProjectValidator
         if (font == null)
         {
             report.errors.Add("Noto Sans SC font resource is missing.");
+        }
+
+        TMP_Settings tmpSettings = AssetDatabase.LoadAssetAtPath<TMP_Settings>("Assets/TextMesh Pro/Resources/TMP Settings.asset");
+        if (tmpSettings == null)
+        {
+            report.errors.Add("TMP Essential Resources are missing; player text initialization would fail.");
+        }
+    }
+
+    private static void ValidateCityRegistry(ValidationReport report)
+    {
+        CityRegistry.ClearCache();
+        CityRegistryEntry[] entries = CityRegistry.GetAll();
+        if (entries.Length != 13)
+        {
+            report.errors.Add("City registry must contain all 13 Jiangsu prefecture-level cities.");
+            return;
+        }
+
+        int available = 0;
+        HashSet<string> ids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        HashSet<int> sortOrders = new HashSet<int>();
+        for (int i = 0; i < entries.Length; i++)
+        {
+            CityRegistryEntry entry = entries[i];
+            if (entry == null || string.IsNullOrWhiteSpace(entry.id) || !ids.Add(entry.id) || !sortOrders.Add(entry.sortOrder))
+            {
+                report.errors.Add("City registry contains a null, blank, or duplicate city entry.");
+                continue;
+            }
+            if (!entry.isAvailable)
+            {
+                continue;
+            }
+            available++;
+            if (string.IsNullOrWhiteSpace(entry.sceneName) || CityDataRepository.Load(entry.sceneName) == null)
+            {
+                report.errors.Add("Available city has no valid scene/data mapping: " + entry.id);
+            }
+        }
+
+        if (available != 5)
+        {
+            report.errors.Add("City registry must expose exactly the five delivered city experiences.");
         }
     }
 

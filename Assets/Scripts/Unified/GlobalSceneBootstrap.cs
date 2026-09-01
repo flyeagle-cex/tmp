@@ -9,12 +9,24 @@ public static class GlobalSceneBootstrap
     private static void Install()
     {
         LanguageManager.EnsureExists();
+        AppState.EnsureExists();
+        NavigationManager.EnsureExists();
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        RenderSettings.skybox = null;
+        Camera[] cameras = Object.FindObjectsByType<Camera>(FindObjectsSortMode.None);
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].clearFlags = CameraClearFlags.SolidColor;
+            cameras[i].backgroundColor = new Color32(7, 23, 38, 255);
+        }
+
+        LanguageManager.EnsureExists().ApplyGlobalSoundSetting();
+
         CanvasScaler[] scalers = Object.FindObjectsByType<CanvasScaler>(FindObjectsSortMode.None);
         for (int i = 0; i < scalers.Length; i++)
         {
@@ -27,6 +39,12 @@ public static class GlobalSceneBootstrap
         if (scene.name != "Start")
         {
             return;
+        }
+
+        HomeDirectoryController home = Object.FindFirstObjectByType<HomeDirectoryController>();
+        if (home == null)
+        {
+            new GameObject("HomeDirectoryController").AddComponent<HomeDirectoryController>();
         }
 
         VideoPlayer[] players = Object.FindObjectsByType<VideoPlayer>(FindObjectsSortMode.None);

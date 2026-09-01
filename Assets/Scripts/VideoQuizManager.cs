@@ -59,8 +59,9 @@ public class VideoQuizManager : MonoBehaviour
     private int currentIndex;
     private bool lastAnswerCorrect;
     private CityInteractionData cityData;
-    private UnifiedCityView view;
+    private ExhibitionCityView view;
     private SubtitleManager subtitleManager;
+    private CultureCueManager cultureCueManager;
     private TransitionController transitionController;
     private RawImage videoImage;
 
@@ -100,7 +101,7 @@ public class VideoQuizManager : MonoBehaviour
         audioController.Initialize(videoPlayer, false);
 
         videoImage = videoPlayer.GetComponent<RawImage>();
-        view = gameObject.AddComponent<UnifiedCityView>();
+        view = gameObject.AddComponent<ExhibitionCityView>();
         view.Initialize(transform as RectTransform, cityData);
         view.StartRequested += OnStartRequested;
         view.AnswerRequested += OnAnswerRequested;
@@ -111,6 +112,9 @@ public class VideoQuizManager : MonoBehaviour
 
         subtitleManager = gameObject.AddComponent<SubtitleManager>();
         subtitleManager.Initialize(videoPlayer, view);
+
+        cultureCueManager = gameObject.AddComponent<CultureCueManager>();
+        cultureCueManager.Initialize(videoPlayer, view);
 
         transitionController = gameObject.AddComponent<TransitionController>();
         transitionController.Initialize(view.FadeGroup);
@@ -135,6 +139,7 @@ public class VideoQuizManager : MonoBehaviour
         }
 
         subtitleManager.SetSegment(segment);
+        cultureCueManager.SetSegment(segment);
         subtitleManager.SetPlaybackVisible(false);
         videoPlayer.Prepare();
     }
@@ -174,6 +179,7 @@ public class VideoQuizManager : MonoBehaviour
         }
         videoPlayer.playbackSpeed = 1f;
         subtitleManager.SetSegment(segment);
+        cultureCueManager.SetSegment(segment);
         videoPlayer.Prepare();
 
         float elapsed = 0f;
@@ -311,6 +317,8 @@ public class VideoQuizManager : MonoBehaviour
         subtitleManager.SetPlaybackVisible(false);
         State = CityInteractionState.Completed;
 
+        NavigationManager.EnsureExists().MarkCurrentCityCompleted();
+
         string nextSceneName = GetNextSceneName();
         if (string.IsNullOrEmpty(nextSceneName))
         {
@@ -336,15 +344,7 @@ public class VideoQuizManager : MonoBehaviour
             return;
         }
 
-        int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextIndex);
-        }
-        else
-        {
-            SceneManager.LoadScene(0);
-        }
+        NavigationManager.EnsureExists().ReturnToDirectory();
     }
 
     private void OnExitRequested()
@@ -359,7 +359,7 @@ public class VideoQuizManager : MonoBehaviour
     {
         if (!transitionController.IsBusy)
         {
-            SceneManager.LoadScene(0);
+            NavigationManager.EnsureExists().ReturnToDirectory();
         }
     }
 

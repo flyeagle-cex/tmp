@@ -28,6 +28,7 @@ public sealed class LanguageManager : MonoBehaviour
     private const string SubtitleModeKey = "Jiangnan.SubtitleMode";
     private const string SubtitleSizeKey = "Jiangnan.SubtitleSize";
     private const string SoundKey = "Jiangnan.Sound";
+    private const string SubtitleExplicitKey = "Jiangnan.SubtitleExplicit";
 
     public static LanguageManager Instance { get; private set; }
 
@@ -35,6 +36,7 @@ public sealed class LanguageManager : MonoBehaviour
     public SubtitleMode CurrentSubtitleMode { get; private set; }
     public SubtitleSize CurrentSubtitleSize { get; private set; }
     public bool SoundEnabled { get; private set; }
+    public bool HasExplicitSubtitlePreference { get; private set; }
 
     public event Action LanguageChanged;
     public event Action SubtitleSettingsChanged;
@@ -70,9 +72,13 @@ public sealed class LanguageManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         CurrentLanguage = (AppLanguage)Mathf.Clamp(PlayerPrefs.GetInt(LanguageKey, (int)AppLanguage.Chinese), 0, 1);
-        CurrentSubtitleMode = (SubtitleMode)Mathf.Clamp(PlayerPrefs.GetInt(SubtitleModeKey, (int)SubtitleMode.Bilingual), 0, 3);
+        HasExplicitSubtitlePreference = PlayerPrefs.GetInt(SubtitleExplicitKey, 0) != 0;
+        CurrentSubtitleMode = HasExplicitSubtitlePreference
+            ? (SubtitleMode)Mathf.Clamp(PlayerPrefs.GetInt(SubtitleModeKey, (int)SubtitleMode.Chinese), 0, 3)
+            : GetLanguageDefaultSubtitle(CurrentLanguage);
         CurrentSubtitleSize = (SubtitleSize)Mathf.Clamp(PlayerPrefs.GetInt(SubtitleSizeKey, (int)SubtitleSize.Medium), 0, 2);
         SoundEnabled = PlayerPrefs.GetInt(SoundKey, 1) != 0;
+        ApplyGlobalSoundSetting();
     }
 
     public void ToggleLanguage()
@@ -89,8 +95,17 @@ public sealed class LanguageManager : MonoBehaviour
 
         CurrentLanguage = language;
         PlayerPrefs.SetInt(LanguageKey, (int)language);
+        if (!HasExplicitSubtitlePreference)
+        {
+            CurrentSubtitleMode = GetLanguageDefaultSubtitle(language);
+            PlayerPrefs.SetInt(SubtitleModeKey, (int)CurrentSubtitleMode);
+        }
         PlayerPrefs.Save();
         LanguageChanged?.Invoke();
+        if (!HasExplicitSubtitlePreference)
+        {
+            SubtitleSettingsChanged?.Invoke();
+        }
     }
 
     public void SetSubtitleMode(SubtitleMode mode)
@@ -101,7 +116,19 @@ public sealed class LanguageManager : MonoBehaviour
         }
 
         CurrentSubtitleMode = mode;
+        HasExplicitSubtitlePreference = true;
         PlayerPrefs.SetInt(SubtitleModeKey, (int)mode);
+        PlayerPrefs.SetInt(SubtitleExplicitKey, 1);
+        PlayerPrefs.Save();
+        SubtitleSettingsChanged?.Invoke();
+    }
+
+    public void UseLanguageDefaultSubtitle()
+    {
+        HasExplicitSubtitlePreference = false;
+        CurrentSubtitleMode = GetLanguageDefaultSubtitle(CurrentLanguage);
+        PlayerPrefs.SetInt(SubtitleExplicitKey, 0);
+        PlayerPrefs.SetInt(SubtitleModeKey, (int)CurrentSubtitleMode);
         PlayerPrefs.Save();
         SubtitleSettingsChanged?.Invoke();
     }
@@ -124,6 +151,25 @@ public sealed class LanguageManager : MonoBehaviour
         SoundEnabled = !SoundEnabled;
         PlayerPrefs.SetInt(SoundKey, SoundEnabled ? 1 : 0);
         PlayerPrefs.Save();
+        ApplyGlobalSoundSetting();
         SoundChanged?.Invoke();
+    }
+
+    public void ApplyGlobalSoundSetting()
+    {
+        AudioListener.pause = !SoundEnabled;
+        AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        for (int i = 0; i < sources.Length; i++)
+        {
+            if (sources[i] != null)
+            {
+                sources[i].mute = !SoundEnabled;
+            }
+        }
+    }
+
+    private static SubtitleMode GetLanguageDefaultSubtitle(AppLanguage language)
+    {
+        return language == AppLanguage.English ? SubtitleMode.English : SubtitleMode.Chinese;
     }
 }

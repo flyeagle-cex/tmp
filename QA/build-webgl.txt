@@ -1,1 +1,1 @@
-WebGL build: Succeeded, errors=0, warnings=0, bytes=55424994
+WebGL build: Succeeded, errors=0, warnings=30, bytes=57290718
