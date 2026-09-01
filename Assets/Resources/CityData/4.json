@@ -1,0 +1,327 @@
+{
+  "cityId": "suzhou",
+  "sceneName": "4",
+  "cityNameZh": "苏州",
+  "cityNameEn": "Suzhou",
+  "titleZh": "水乡园林与非遗文化互动体验",
+  "titleEn": "An Interactive Journey through Water Towns and Living Heritage",
+  "segments": [
+    {
+      "segmentId": "suzhou_zhouzhuang",
+      "chapterZh": "周庄水乡",
+      "chapterEn": "Zhouzhuang Water Town",
+      "question": {
+        "questionId": "suzhou_q01",
+        "questionZh": "周庄被称为“中国第一______”？",
+        "questionEn": "Zhouzhuang is known as “China's No. 1 ______.”",
+        "options": [
+          {
+            "optionId": "water_town",
+            "textZh": "A. 水乡",
+            "textEn": "A. water town"
+          },
+          {
+            "optionId": "garden",
+            "textZh": "B. 园林",
+            "textEn": "B. classical garden"
+          },
+          {
+            "optionId": "old_street",
+            "textZh": "C. 老街",
+            "textEn": "C. old street"
+          },
+          {
+            "optionId": "food_city",
+            "textZh": "D. 美食城",
+            "textEn": "D. food city"
+          }
+        ],
+        "correctOptionId": "water_town",
+        "successZh": "“水乡”就是有很多水的地方。",
+        "successEn": "Correct! A water town is a settlement shaped by canals, rivers, and bridges."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 14.0,
+          "chinese": "周庄河道纵横，民居临水而建，石桥连接两岸。",
+          "english": "Zhouzhuang is woven with canals, waterside homes, and stone bridges."
+        },
+        {
+          "startTime": 14.0,
+          "endTime": 28.8,
+          "chinese": "舟行水巷之间，能感受典型江南水乡的生活节奏。",
+          "english": "A boat ride through its lanes reveals the everyday rhythm of a Jiangnan water town."
+        }
+      ],
+      "mediaFile": "suzhou_01.mp4",
+      "sourceGuid": "fef6d1f768cf35542b5fe266685c7c23"
+    },
+    {
+      "segmentId": "suzhou_pingjiang_road",
+      "chapterZh": "平江路",
+      "chapterEn": "Pingjiang Road",
+      "question": {
+        "questionId": "suzhou_q02",
+        "questionZh": "平江路是苏州保存最完好的古城老街。",
+        "questionEn": "Pingjiang Road is one of Suzhou's best-preserved historic streets.",
+        "options": [
+          {
+            "optionId": "true",
+            "textZh": "正确",
+            "textEn": "True"
+          },
+          {
+            "optionId": "false",
+            "textZh": "错误",
+            "textEn": "False"
+          }
+        ],
+        "correctOptionId": "true",
+        "successZh": "千年前是这样，现在还是这样。",
+        "successEn": "Its street-and-canal pattern still echoes the city plan of a thousand years ago."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 15.0,
+          "chinese": "平江路沿河延伸，小桥、白墙与窄巷保存着古城肌理。",
+          "english": "Pingjiang Road follows a canal, preserving bridges, whitewashed walls, and narrow lanes."
+        },
+        {
+          "startTime": 15.0,
+          "endTime": 31.8,
+          "chinese": "老街仍有人居住，也让历史与当代生活自然相遇。",
+          "english": "People still live here, allowing history and contemporary life to meet naturally."
+        }
+      ],
+      "mediaFile": "suzhou_02.mp4",
+      "sourceGuid": "dc612e4928076ea49af1bf4fa7384494"
+    },
+    {
+      "segmentId": "suzhou_embroidery",
+      "chapterZh": "苏绣",
+      "chapterEn": "Suzhou Embroidery",
+      "question": {
+        "questionId": "suzhou_q03",
+        "questionZh": "苏绣最神奇的一种技法叫什么？",
+        "questionEn": "What is one of the most remarkable techniques in Suzhou embroidery called?",
+        "options": [
+          {
+            "optionId": "double_sided",
+            "textZh": "A. 双面绣",
+            "textEn": "A. Double-sided embroidery"
+          },
+          {
+            "optionId": "single_sided",
+            "textZh": "B. 单面绣",
+            "textEn": "B. Single-sided embroidery"
+          },
+          {
+            "optionId": "three_dimensional",
+            "textZh": "C. 立体绣",
+            "textEn": "C. Three-dimensional embroidery"
+          },
+          {
+            "optionId": "gold_thread",
+            "textZh": "D. 金线绣",
+            "textEn": "D. Gold-thread embroidery"
+          }
+        ],
+        "correctOptionId": "double_sided",
+        "successZh": "苏绣是中国四大名绣之一。",
+        "successEn": "Suzhou embroidery is one of China's four renowned embroidery traditions."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 14.0,
+          "chinese": "苏绣以针法细密、色彩雅致和形象生动著称。",
+          "english": "Suzhou embroidery is known for delicate stitches, refined colors, and lifelike images."
+        },
+        {
+          "startTime": 14.0,
+          "endTime": 28.8,
+          "chinese": "双面绣让作品正反两面都呈现完整图案。",
+          "english": "Double-sided embroidery presents complete images on both sides of the fabric."
+        }
+      ],
+      "mediaFile": "suzhou_03.mp4",
+      "sourceGuid": "1533c271d1aaa424f91802a2a4551f7a"
+    },
+    {
+      "segmentId": "suzhou_kunqu",
+      "chapterZh": "昆曲水袖",
+      "chapterEn": "Kunqu Opera and Water Sleeves",
+      "question": {
+        "questionId": "suzhou_q04",
+        "questionZh": "水袖轻轻遮住脸，表现了哪种情绪？",
+        "questionEn": "When a performer gently covers the face with a water sleeve, which emotion is being expressed?",
+        "options": [
+          {
+            "optionId": "shy",
+            "textZh": "害羞",
+            "textEn": "Shyness"
+          },
+          {
+            "optionId": "angry",
+            "textZh": "生气",
+            "textEn": "Anger"
+          },
+          {
+            "optionId": "happy",
+            "textZh": "开心",
+            "textEn": "Joy"
+          },
+          {
+            "optionId": "longing",
+            "textZh": "向往",
+            "textEn": "Longing"
+          }
+        ],
+        "correctOptionId": "shy",
+        "successZh": "昆曲的故事大多关于爱情、友情和美好的情感。",
+        "successEn": "Kunqu stories often explore love, friendship, and deeply felt human emotions."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 13.0,
+          "chinese": "昆曲唱腔婉转，身段细腻，水袖能延伸人物情感。",
+          "english": "Kunqu combines graceful singing with delicate movement; water sleeves extend a character's emotion."
+        },
+        {
+          "startTime": 13.0,
+          "endTime": 27.8,
+          "chinese": "轻掩面庞的动作含蓄地表达羞涩与柔情。",
+          "english": "Gently covering the face conveys shyness and tenderness with subtle restraint."
+        }
+      ],
+      "mediaFile": "suzhou_04.mp4",
+      "sourceGuid": "1d1969510fb4ead4c811bcd75777b018"
+    },
+    {
+      "segmentId": "suzhou_noodles",
+      "chapterZh": "苏式汤面",
+      "chapterEn": "Suzhou Noodles",
+      "question": {
+        "questionId": "suzhou_q05",
+        "questionZh": "苏式汤面中，加在面上的配菜叫什么？",
+        "questionEn": "What are the toppings added to Suzhou-style soup noodles called?",
+        "options": [
+          {
+            "optionId": "extra_dish",
+            "textZh": "A. 加菜",
+            "textEn": "A. extra dishes"
+          },
+          {
+            "optionId": "jiaotou",
+            "textZh": "B. 浇头",
+            "textEn": "B. jiaotou"
+          },
+          {
+            "optionId": "peitou",
+            "textZh": "C. 配头",
+            "textEn": "C. peitou"
+          },
+          {
+            "optionId": "soup_head",
+            "textZh": "D. 汤头",
+            "textEn": "D. soup base"
+          }
+        ],
+        "correctOptionId": "jiaotou",
+        "successZh": "“浇头”就是加在面上的配菜。",
+        "successEn": "Correct! “Jiaotou” refers to the prepared toppings served over the noodles."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 17.0,
+          "chinese": "苏式汤面讲究汤清、面细，也讲究丰富的浇头。",
+          "english": "Suzhou noodles pair a clear broth and fine noodles with a wide range of toppings."
+        },
+        {
+          "startTime": 17.0,
+          "endTime": 35.8,
+          "chinese": "焖肉、爆鱼等浇头让一碗面呈现不同风味。",
+          "english": "Braised pork, fried fish, and other jiaotou give each bowl its own character."
+        }
+      ],
+      "mediaFile": "suzhou_05.mp4",
+      "sourceGuid": "716cf5188a3b0844888896f6be35af98"
+    },
+    {
+      "segmentId": "suzhou_poetry",
+      "chapterZh": "枫桥诗韵",
+      "chapterEn": "Poetry at Maple Bridge",
+      "question": {
+        "questionId": "suzhou_q06",
+        "questionZh": "月落乌啼______满天。",
+        "questionEn": "Complete the line: “The moon sets, crows cry, and the sky is filled with ____.”",
+        "options": [
+          {
+            "optionId": "frost",
+            "textZh": "霜",
+            "textEn": "frost"
+          },
+          {
+            "optionId": "sorrow",
+            "textZh": "愁",
+            "textEn": "sorrow"
+          },
+          {
+            "optionId": "hanshan",
+            "textZh": "寒山",
+            "textEn": "Hanshan"
+          },
+          {
+            "optionId": "boat",
+            "textZh": "客船",
+            "textEn": "a passenger boat"
+          }
+        ],
+        "correctOptionId": "frost",
+        "successZh": "这句诗出自《枫桥夜泊》。",
+        "successEn": "This line comes from A Night Mooring by Maple Bridge."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 23.0,
+          "chinese": "枫桥、寒山寺与夜半钟声因一首唐诗流传千年。",
+          "english": "Maple Bridge, Hanshan Temple, and midnight bells have echoed through a Tang poem for centuries."
+        },
+        {
+          "startTime": 23.0,
+          "endTime": 48.8,
+          "chinese": "诗中的月落、乌啼与江枫勾勒出清冷而悠远的夜色。",
+          "english": "The setting moon, crows, and riverside maples create a cool and distant night scene."
+        }
+      ],
+      "mediaFile": "suzhou_06.mp4",
+      "sourceGuid": "890ef5678b751c74c931967fdbdca11b"
+    },
+    {
+      "segmentId": "suzhou_ending",
+      "chapterZh": "苏州印象",
+      "chapterEn": "Memories of Suzhou",
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 11.0,
+          "chinese": "水巷、刺绣、昆曲、美食与诗歌共同织成苏州。",
+          "english": "Canals, embroidery, Kunqu, cuisine, and poetry weave together the character of Suzhou."
+        },
+        {
+          "startTime": 11.0,
+          "endTime": 22.8,
+          "chinese": "传统并未停在过去，而是在今天的城市生活中继续生长。",
+          "english": "These traditions do not remain in the past; they continue to grow in the city today."
+        }
+      ],
+      "mediaFile": "suzhou_07.mp4",
+      "sourceGuid": "4f0d33dbfa1cdce4d83db57ac3f705f2"
+    }
+  ]
+}

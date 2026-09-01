@@ -1,0 +1,225 @@
+{
+  "cityId": "nanjing",
+  "sceneName": "5",
+  "cityNameZh": "南京",
+  "cityNameEn": "Nanjing",
+  "titleZh": "秦淮文脉与古都文化互动体验",
+  "titleEn": "An Interactive Journey through Qinhuai and the Ancient Capital",
+  "segments": [
+    {
+      "segmentId": "nanjing_qinhuai",
+      "chapterZh": "秦淮河",
+      "chapterEn": "The Qinhuai River",
+      "question": {
+        "questionId": "nanjing_q01",
+        "questionZh": "秦淮河最有名的夜间游览活动叫什么？",
+        "questionEn": "What is the best-known nighttime activity on the Qinhuai River?",
+        "options": [
+          {
+            "optionId": "morning_market",
+            "textZh": "A. 秦淮早市",
+            "textEn": "A. Qinhuai morning market"
+          },
+          {
+            "optionId": "night_cruise",
+            "textZh": "B. 秦淮夜游",
+            "textEn": "B. Qinhuai night cruise"
+          },
+          {
+            "optionId": "lantern_fair",
+            "textZh": "C. 秦淮灯会",
+            "textEn": "C. Qinhuai Lantern Fair"
+          },
+          {
+            "optionId": "fishing_song",
+            "textZh": "D. 秦淮渔歌",
+            "textEn": "D. Qinhuai fishing songs"
+          }
+        ],
+        "correctOptionId": "night_cruise",
+        "successZh": "秦淮河的水光夜色，是不是像一幅流动的中国画？",
+        "successEn": "The lights reflected on the Qinhuai River look like a Chinese painting in motion."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 18.0,
+          "chinese": "秦淮河穿过南京老城，灯影、画舫与古建筑相互映照。",
+          "english": "The Qinhuai River flows through old Nanjing, reflecting lanterns, painted boats, and historic buildings."
+        },
+        {
+          "startTime": 18.0,
+          "endTime": 38.8,
+          "chinese": "乘船夜游，可以从水上感受古都繁华而温柔的一面。",
+          "english": "A night cruise reveals the ancient capital's lively yet gentle character from the water."
+        }
+      ],
+      "mediaFile": "nanjing_01.mp4",
+      "sourceGuid": "6a3cd877564a2e540bbf26676b261013"
+    },
+    {
+      "segmentId": "nanjing_confucius_temple",
+      "chapterZh": "夫子庙",
+      "chapterEn": "The Confucius Temple",
+      "question": {
+        "questionId": "nanjing_q02",
+        "questionZh": "夫子庙是纪念中国哪位伟大教育家的地方？",
+        "questionEn": "Which great Chinese educator is commemorated at the Confucius Temple?",
+        "options": [
+          {
+            "optionId": "mencius",
+            "textZh": "A. 孟子",
+            "textEn": "A. Mencius"
+          },
+          {
+            "optionId": "confucius",
+            "textZh": "B. 孔子",
+            "textEn": "B. Confucius"
+          },
+          {
+            "optionId": "laozi",
+            "textZh": "C. 老子",
+            "textEn": "C. Laozi"
+          },
+          {
+            "optionId": "zhuangzi",
+            "textZh": "D. 庄子",
+            "textEn": "D. Zhuangzi"
+          }
+        ],
+        "correctOptionId": "confucius",
+        "successZh": "许多读书人来到夫子庙祭拜，希望自己学业有成。",
+        "successEn": "For generations, students have visited the temple to honor learning and wish for success in their studies."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 14.0,
+          "chinese": "南京夫子庙纪念孔子，也是古代教育与科举文化的重要空间。",
+          "english": "Nanjing's Confucius Temple honors Confucius and preserves traditions of education and imperial examinations."
+        },
+        {
+          "startTime": 14.0,
+          "endTime": 28.8,
+          "chinese": "今天，这里仍连接着读书、礼仪与城市生活。",
+          "english": "Today, the area still connects learning, ritual, and everyday urban life."
+        }
+      ],
+      "mediaFile": "nanjing_02.mp4",
+      "sourceGuid": "65c8617428614754b8d3c070b68299c6"
+    },
+    {
+      "segmentId": "nanjing_yunjin",
+      "chapterZh": "南京云锦",
+      "chapterEn": "Nanjing Yunjin Brocade",
+      "question": {
+        "questionId": "nanjing_q03",
+        "questionZh": "南京云锦在古代只有皇帝和贵族才能使用，普通人是不可以穿的。",
+        "questionEn": "In ancient times, Nanjing Yunjin brocade was reserved for emperors and nobles rather than ordinary people.",
+        "options": [
+          {
+            "optionId": "true",
+            "textZh": "正确",
+            "textEn": "True"
+          },
+          {
+            "optionId": "false",
+            "textZh": "错误",
+            "textEn": "False"
+          }
+        ],
+        "correctOptionId": "true",
+        "successZh": "古人说“锦上添花”——就是在美丽的锦缎上再绣上花朵，形容好上加好！",
+        "successEn": "The idiom “adding flowers to brocade” means making something already splendid even better."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 21.0,
+          "chinese": "南京云锦色彩绚丽、纹样华美，织造工艺极其复杂。",
+          "english": "Nanjing Yunjin brocade is celebrated for brilliant colors, ornate patterns, and highly complex weaving."
+        },
+        {
+          "startTime": 21.0,
+          "endTime": 43.8,
+          "chinese": "它曾服务于宫廷，如今作为珍贵非遗继续传承。",
+          "english": "Once made for the imperial court, it continues today as treasured living heritage."
+        }
+      ],
+      "mediaFile": "nanjing_03.mp4",
+      "sourceGuid": "874d28e74a7854e428dfdf6fdc6f487e"
+    },
+    {
+      "segmentId": "nanjing_cuisine",
+      "chapterZh": "鸭血粉丝汤",
+      "chapterEn": "Duck Blood Vermicelli Soup",
+      "question": {
+        "questionId": "nanjing_q04",
+        "questionZh": "我想吃一（ ）鸭血粉丝汤。",
+        "questionEn": "I would like a ( ) of duck blood vermicelli soup.",
+        "options": [
+          {
+            "optionId": "bowl",
+            "textZh": "碗",
+            "textEn": "bowl"
+          },
+          {
+            "optionId": "animal",
+            "textZh": "只",
+            "textEn": "animal"
+          },
+          {
+            "optionId": "piece",
+            "textZh": "块",
+            "textEn": "piece"
+          },
+          {
+            "optionId": "plate",
+            "textZh": "盘",
+            "textEn": "plate"
+          }
+        ],
+        "correctOptionId": "bowl",
+        "successZh": "你已经是南京美食专家啦！",
+        "successEn": "You are becoming a Nanjing food expert!"
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 19.0,
+          "chinese": "鸭血粉丝汤汤鲜料足，是南京街头熟悉的日常味道。",
+          "english": "Duck blood vermicelli soup is a savory, hearty favorite found throughout Nanjing."
+        },
+        {
+          "startTime": 19.0,
+          "endTime": 40.8,
+          "chinese": "一碗热汤把鸭血、粉丝和多种配料汇在一起。",
+          "english": "A warm bowl brings duck blood, vermicelli, and varied ingredients together."
+        }
+      ],
+      "mediaFile": "nanjing_04.mp4",
+      "sourceGuid": "e1946900e80b11c4aa08f33807de996a"
+    },
+    {
+      "segmentId": "nanjing_ending",
+      "chapterZh": "南京印象",
+      "chapterEn": "Memories of Nanjing",
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 7.0,
+          "chinese": "秦淮水色、尊师文脉、云锦技艺与城市味道共同讲述南京。",
+          "english": "Qinhuai waters, traditions of learning, Yunjin craft, and local flavors tell Nanjing's story."
+        },
+        {
+          "startTime": 7.0,
+          "endTime": 14.8,
+          "chinese": "江南五城之旅到这里告一段落，文化探索仍可继续。",
+          "english": "Our five-city Jiangnan journey concludes here, but cultural discovery can continue."
+        }
+      ],
+      "mediaFile": "nanjing_05.mp4",
+      "sourceGuid": "08da9c8588a26e240a7923a677c1e2bc"
+    }
+  ]
+}

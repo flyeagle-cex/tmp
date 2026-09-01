@@ -1,0 +1,196 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{booktabs,longtable,tabularx,array,xcolor,hyperref,fancyhdr,enumitem}
+\definecolor{jade}{HTML}{2A7065}
+\definecolor{gold}{HTML}{C9A152}
+\definecolor{ink}{HTML}{1C2228}
+\hypersetup{colorlinks=true,linkcolor=jade,urlcolor=jade}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{nosep,leftmargin=2em}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\fancyhf{}
+\lhead{JiangnanProject}
+\rhead{五城市交互统一化报告}
+\cfoot{\thepage}
+\newcommand{\status}[1]{\textcolor{jade}{\textbf{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+\begin{document}
+
+{\Huge\bfseries\color{ink} JiangnanProject\par}
+\vspace{0.35em}
+{\LARGE\bfseries\color{jade} 五城市交互统一化报告\par}
+\vspace{0.8em}
+\begin{tabular}{@{}ll@{}}
+生成日期： & 2026-09-01 \\
+统一母版： & 扬州（Scene 1） \\
+Unity： & 6000.3.22f1 \\
+最终状态： & \status{PASS\_WITH\_MANUAL\_ACCEPTANCE\_REQUIRED}
+\end{tabular}
+\vspace{1em}
+
+\section{自动识别到的五座城市}
+\begin{center}
+\begin{tabular}{cllrr}
+\toprule
+Scene & 城市 & English & 视频段 & 题目\\
+\midrule
+1 & 扬州 & Yangzhou & 6 & 5\\
+2 & 淮安 & Huai'an & 6 & 5\\
+3 & 无锡 & Wuxi & 5 & 4\\
+4 & 苏州 & Suzhou & 7 & 6\\
+5 & 南京 & Nanjing & 5 & 4\\
+\bottomrule
+\end{tabular}
+\end{center}
+入口 Scene 为 \code{Start}。五城合计 29 段城市视频、24 道文化题。
+
+\section{扬州基准结构}
+扬州 \code{Assets/Scenes/1.unity} 被确定为唯一 Canonical Reference。原始结构由 Legacy UGUI Canvas、VideoPlayer/RawImage、问题面板、正确/错误反馈、完成面板与 \code{VideoQuizManager} 构成。扬州 6 段竖屏视频均为 H.264/AAC，声音来自视频内嵌音轨。
+
+项目中没有可安全复用为五城母版的完整 Prefab。为避免重新绑定乱码路径下的大量 Scene 引用，统一层采用 \code{UnifiedCityView} 在每城 Canvas 上生成同一棵 \code{CityInteractionRoot}。流程统一为：
+\begin{center}
+\textbf{Intro $\rightarrow$ PlayingVideo $\rightarrow$ ShowingQuestion $\rightarrow$ ShowingFeedback $\rightarrow$ Transitioning $\rightarrow$ Completed}
+\end{center}
+
+\section{原先五城不一致之处}
+\begin{longtable}{>{\bfseries}p{3.0cm}p{11.5cm}}
+\toprule
+项目 & 审计结果\\
+\midrule
+\endhead
+内容规模 & 各城视频段与题目数不同，不能复制扬州内容。\\
+完成导航 & 南京 legacy \code{completeButton} 引用为空。\\
+Canvas & 原基准为 800×600、Constant Pixel Size，不符合网页 16:9 目标。\\
+首帧 & Play On Awake 与激活的 Question Panel 并存，存在首帧竞态。\\
+播放速度 & 五城 VideoPlayer 均序列化为 10 倍速。\\
+音频 & 视频含音轨，但 AudioSource target 未正确连接。\\
+比例 & 缺少统一 FitInParent，竖屏视频有拉伸风险。\\
+双语/字幕 & 缺少覆盖全部题干、选项和 UI 的全局语言层及四模式字幕。\\
+状态门控 & 缺少统一防重复点击、弹窗互斥和转场互斥。\\
+\bottomrule
+\end{longtable}
+
+\section{已统一内容}
+\begin{itemize}
+\item Initial UI：同一 Intro、TopBar、开始方式、弹窗层级与默认隐藏状态。
+\item Video：URL 播放、1 倍速、首帧准备、0.25/0.32 秒淡入淡出、保持比例。
+\item Audio：统一 AudioSource；Sound Off 使用 mute，不停止或重置时间轴。
+\item Subtitle：中文、English、中英双语、关闭；小/中/大；由 VideoPlayer.time 驱动。
+\item Question：题干、选项、反馈即时切换语言，正确答案使用稳定 optionId。
+\item Language：不重载 Scene、不重播视频，语言/字幕/声音设置跨城保持。
+\item Navigation：完成后下一城，末城回入口；ESC 先关弹窗，再询问退出。
+\item Resolution：Scale With Screen Size，1920×1080，Match 0.5。
+\item Web：根目录 WebMedia，构建后复制到发布目录，以 URL 播放。
+\end{itemize}
+
+\section{新增脚本}
+\begin{longtable}{p{7.1cm}p{7.4cm}}
+\toprule
+文件 & 作用\\
+\midrule
+\endhead
+\code{CityInteractionData.cs} & 城市、片段、题目、选项、字幕共享结构。\\
+\code{CityDataRepository.cs} & 按 Scene 加载城市 JSON。\\
+\code{LanguageManager.cs} & 全局语言、字幕、字号、声音与持久化。\\
+\code{SubtitleManager.cs} & 时间 cue 查询与四模式渲染。\\
+\code{AudioController.cs} & VideoPlayer 音轨与 AudioSource 接线。\\
+\code{TransitionController.cs} & 淡入淡出与转场互斥。\\
+\code{UnifiedCityView.cs} & 五城共用 UI 树和弹窗层。\\
+\code{GlobalSceneBootstrap.cs} & 跨 Scene 初始化和入口视频接线。\\
+\code{MediaPathResolver.cs} & Editor/Windows/WebGL 媒体路径。\\
+\code{RuntimeSmokeRunner.cs} & 五城自动运行测试。\\
+\code{JiangnanProjectValidator.cs} & 编辑器静态验收。\\
+\code{JiangnanBuild.cs} & 双平台构建和媒体发布。\\
+\bottomrule
+\end{longtable}
+
+\section{修改脚本}
+\code{Assets/Scripts/VideoQuizManager.cs} 保留原 public 序列化字段与 \code{QuizData}，避免题目、答案和 Scene 引用丢失；其执行逻辑重构为共享状态机、统一 View、URL 视频、字幕、声音、转场、导航与退出控制。原 Scene 中中文题目、选项、反馈和 \code{correctIndex} 仍作为权威内容合并进双语数据。
+
+同时修改 \code{Start.unity} 与五个城市 Scene 的 Canvas、VideoPlayer 和初始 Active 状态；没有删除任何原始城市素材。
+
+\section{新增 Prefab / Data}
+\begin{itemize}
+\item \code{Assets/Resources/CityData/1.json} 至 \code{5.json}。
+\item \code{Assets/Resources/Fonts/NotoSansSC-Regular.otf} 及 OFL 许可证。
+\item \code{WebMedia/*.mp4} 共 30 个；12 个 MOV 仅无损换容器，未重新编码。
+\item 未新增序列化 Prefab；共享脚本在运行时生成母版 Root，以降低断引用风险。
+\item 原始 mp4、mov、png、jpg 和音轨均未覆盖或删除。
+\end{itemize}
+
+\section{双语覆盖情况}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+城市 & UI/标题 & 题目双语 & 结果\\
+\midrule
+扬州 & 完整 & 5/5 & \status{PASS}\\
+淮安 & 完整 & 5/5 & \status{PASS}\\
+无锡 & 完整 & 4/4 & \status{PASS}\\
+苏州 & 完整 & 6/6 & \status{PASS}\\
+南京 & 完整 & 4/4 & \status{PASS}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{字幕}
+Chinese、English、Bilingual、Off 四种模式均 \status{PASS}；Small/Medium/Large、播放中切换不改时间、跨 Scene 保持均 \status{PASS}。58 条双语 cue 通过时间顺序、非空和视频时长边界校验。
+
+\section{Question}
+Chinese 与 English 均 \status{PASS}；语言切换只改变显示文本。24/24 道题的 \code{correctOptionId} 与原 \code{correctIndex} 一致；错误后重试、正确后继续和防重复点击均通过。
+
+\section{Audio}
+\begin{center}
+\begin{tabular}{lrrc}
+\toprule
+城市 & 有音轨视频 & 已接线 & 结果\\
+\midrule
+扬州 & 6/6 & 6/6 & \status{PASS}\\
+淮安 & 6/6 & 6/6 & \status{PASS}\\
+无锡 & 5/5 & 5/5 & \status{PASS}\\
+苏州 & 7/7 & 7/7 & \status{PASS}\\
+南京 & 5/5 & 5/5 & \status{PASS}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Resolution}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+分辨率 & 五城结果 & Error\\
+\midrule
+1920×1080 & \status{PASS 5/5} & 0\\
+1600×900 & \status{PASS 5/5} & 0\\
+1366×768 & \status{PASS 5/5} & 0\\
+1280×720 & \status{PASS 5/5} & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{构建与运行验证}
+\begin{itemize}
+\item Editor Validator：PASS 5/5，Error 0。
+\item Windows Build：Succeeded，Error 0，Warning 0，媒体 30/30。
+\item WebGL Build：Succeeded，Error 0，Warning 0，媒体 30/30，无 VideoClip 不支持警告。
+\item Windows Runtime：四种分辨率均 PASS 5/5。
+\item WebGL HTTP：index、loader、framework、wasm、data 返回 200；MP4 类型为 video/mp4。
+\end{itemize}
+
+\section{Remaining Issues}
+\begin{enumerate}
+\item 字幕为按片段主题制作并与时长同步的双语文化导览摘要，不是逐字听写；需内容负责人试听终验。
+\item 无锡原项目“螃蟹季节”题的正确索引为 0（显示“春季”）。按不得修改答案含义的约束原样保留，需内容负责人确认。
+\item 原项目为 Unity 2022.3.62f2c1；本机可用版本为 6000.3.22f1，已升级并通过构建。升级前配置位于 \code{Backups/pre\_unification\_20260901}。
+\item WebGL 上线服务器需人工点击验收浏览器自动播放、全屏及视频 Range 请求策略。
+\item 源项目未提供可验证的独立生词数据，未虚构内容；统一 Popup 层可后续扩展。
+\end{enumerate}
+
+\section{Final Status}
+\begin{center}
+\fcolorbox{gold}{white}{\parbox{0.9\textwidth}{\centering\large\status{PASS\_WITH\_MANUAL\_ACCEPTANCE\_REQUIRED}}}
+\end{center}
+
+\end{document}

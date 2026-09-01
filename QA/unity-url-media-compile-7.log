@@ -1,0 +1,697 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.22f1 (1c726e1fb402) revision 1864302'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Channel LicenseClient-chenerxiao doesn't exist
+OS: 'Windows 11  (10.0.26100) CoreCountrySpecific' Language: 'zh' Physical Memory: 32189 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-09-01T02:43:45Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 23872)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-chenerxiao" at "2026-09-01T02:43:45.8268086Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 23872, path: "F:/Unity/Editors/6000.3.22f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+
+COMMAND LINE ARGUMENTS:
+F:\Unity\Editors\6000.3.22f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject
+-logFile
+C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\QA\unity-url-media-compile-7.log
+Successfully changed project path to: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject
+C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [42636]  Target information:
+
+Player connection [42636]  * "[IP] 26.6.80.240 [Port] 55504 [Flags] 2 [Guid] 1171536266 [EditorId] 1171536266 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-0KNAHACI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [42636]  * "[IP] 192.168.59.1 [Port] 55504 [Flags] 2 [Guid] 1171536266 [EditorId] 1171536266 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-0KNAHACI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [42636]  * "[IP] 192.168.133.1 [Port] 55504 [Flags] 2 [Guid] 1171536266 [EditorId] 1171536266 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-0KNAHACI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [42636]  * "[IP] 10.0.192.223 [Port] 55504 [Flags] 2 [Guid] 1171536266 [EditorId] 1171536266 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-0KNAHACI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [42636] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [42636] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-35044" after 0.5 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              dd7d6603528a444ba2e4f04a95721fb1
+  Correlation Id:          f907ca6efe96384c6fd8f15ebca16b5f
+  External correlation Id: 3894315503473126235
+  Machine Id:              sc7fAOkRYI8rgsseMU1LTXiJNeg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-chenerxiao" (connect: 0.57s, validation: 0.90s, handshake: 0.16s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-chenerxiao-notifications" at "2026-09-01T02:43:46.8880845Z"
+[Licensing::Module] Connected to LicensingClient (PId: 23872, launch time: 0.02, total connection time: 1.63s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2476034751777-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 1.72s
+[Licensing::Module] Licensing is initialized (took 0.12s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.22f1 (1c726e1fb402)
+[Subsystems] Discovering subsystems at path F:/Unity/Editors/6000.3.22f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'F:/Unity/Editors/6000.3.22f1/Editor/Data/Managed'
+Mono path[1] = 'F:/Unity/Editors/6000.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'F:/Unity/Editors/6000.3.22f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56044
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: F:/Unity/Editors/6000.3.22f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: F:/Unity/Editors/6000.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: F:/Unity/Editors/6000.3.22f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.016189 seconds.
+- Loaded All Assemblies, in  0.516 seconds
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.319 seconds
+Domain Reload Profiling: 819ms
+	BeginReloadAssembly (216ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (13ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (173ms)
+		LoadAssemblies (191ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (168ms)
+			TypeCache.Refresh (166ms)
+				TypeCache.ScanAssembly (152ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (319ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (291ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (56ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (101ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 47 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.collab-proxy@2.12.4 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.collab-proxy@0b1559bcd34e)
+    com.unity.timeline@1.7.7 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.timeline@5dd5778a3906)
+    com.unity.visualscripting@1.9.4 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.visualscripting@0920df93f957)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.ide.rider@3.0.40 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.ide.rider@e4950c6d131b)
+    com.unity.editorcoroutines@1.1.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.editorcoroutines@87a15ed012c2)
+    com.unity.performance.profile-analyzer@1.4.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.performance.profile-analyzer@2bb26871883c)
+    com.unity.testtools.codecoverage@1.3.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.testtools.codecoverage@19a841221620)
+    com.unity.settings-manager@2.1.1 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86)
+  Built-in packages:
+    com.unity.feature.development@1.0.2 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.feature.development@767aadbc6eb7)
+    com.unity.textmeshpro@5.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.textmeshpro@53f43edfd2e0)
+    com.unity.ugui@2.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.ugui@20629863fcab)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.test-framework@1.6.0 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.test-framework@bd7f943e9647)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+[Package Manager] com.unity.textmeshpro is deprecated: This package is no longer supported. TextMeshPro functionalities are now included in the com.unity.ugui package. To continue using them, consider adding it to your project dependencies.
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.15 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: F:\Unity\Editors\6000.3.22f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/2000b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject
+ExitCode: 4 Duration: 0s90ms
+[             ] Require frontend run.  Library/Bee/2000b0aE.dag couldn't be loaded
+DisplayProgressbar: Compiling Scripts
+Starting: F:\Unity\Editors\6000.3.22f1\Editor\Data\netcorerun\netcorerun.exe "F:\Unity\Editors\6000.3.22f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/2000b0aE.dag.json" "Library/Bee/2000b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject
+ExitCode: 0 Duration: 0s551ms
+Starting: F:\Unity\Editors\6000.3.22f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/2000b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\2000b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject
+ExitCode: 0 Duration: 17s
+Finished compiling graph: 428 nodes, 6277 flattened edges (5745 ToBuild, 62 ToUse), maximum node priority 303
+[149/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.rsp
+[150/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.rsp2
+[151/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.dll.mvfrm.rsp
+[152/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.rsp
+[153/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.dll.mvfrm.rsp
+[154/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.rsp2
+[155/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt
+[156/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt
+[157/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.rsp2
+[158/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.rsp2
+[159/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.dll.mvfrm.rsp
+[160/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt
+[161/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.dll.mvfrm.rsp
+[162/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.rsp
+[163/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.rsp
+[164/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.UnityAdditionalFile.txt
+[165/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.UnityAdditionalFile.txt
+[166/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.rsp2
+[167/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt
+[168/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.rsp
+[169/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.rsp2
+[170/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.rsp2
+[171/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.dll.mvfrm.rsp
+[172/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.UnityAdditionalFile.txt
+[173/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.dll.mvfrm.rsp
+[174/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.dll.mvfrm.rsp
+[175/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.rsp
+[176/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.UnityAdditionalFile.txt
+[177/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.rsp
+[178/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.rsp2
+[179/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.UnityAdditionalFile.txt
+[180/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.rsp2
+[181/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.UnityAdditionalFile.txt
+[182/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.rsp2
+[183/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.dll.mvfrm.rsp
+[184/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.dll.mvfrm.rsp
+[185/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.dll.mvfrm.rsp
+[186/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.rsp
+[187/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.UnityAdditionalFile.txt
+[188/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.rsp
+[189/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.rsp2
+[190/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.rsp2
+[191/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.rsp
+[192/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.rsp2
+[193/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.UnityAdditionalFile.txt
+[194/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.UnityAdditionalFile.txt
+[195/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.rsp2
+[196/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.UnityAdditionalFile.txt
+[197/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.rsp2
+[198/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.rsp2
+[199/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.UnityAdditionalFile.txt
+[200/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.UnityAdditionalFile.txt
+[201/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.dll.mvfrm.rsp
+[202/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll.mvfrm.rsp
+[203/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.dll.mvfrm.rsp
+[204/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.dll.mvfrm.rsp
+[205/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.rsp
+[206/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.dll.mvfrm.rsp
+[207/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll.mvfrm.rsp
+[208/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.rsp
+[209/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.rsp
+[210/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.rsp
+[211/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.rsp
+[212/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.rsp
+[213/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.rsp2
+[214/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.dll.mvfrm.rsp
+[215/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.UnityAdditionalFile.txt
+[216/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.UnityAdditionalFile.txt
+[217/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.UnityAdditionalFile.txt
+[218/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.UnityAdditionalFile.txt
+[219/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.rsp2
+[220/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.rsp2
+[221/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.UnityAdditionalFile.txt
+[222/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.UnityAdditionalFile.txt
+[223/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.rsp2
+[224/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.rsp2
+[225/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.rsp2
+[226/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.UnityAdditionalFile.txt
+[227/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.UnityAdditionalFile.txt
+[228/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.rsp2
+[229/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.UnityAdditionalFile.txt
+[230/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.rsp2
+[231/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.rsp2
+[232/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.UnityAdditionalFile.txt
+[233/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.rsp2
+[234/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.UnityAdditionalFile.txt
+[235/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.rsp2
+[236/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.dll.mvfrm.rsp
+[237/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.rsp
+[238/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.dll.mvfrm.rsp
+[239/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.dll.mvfrm.rsp
+[240/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.dll.mvfrm.rsp
+[241/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.dll.mvfrm.rsp
+[242/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.dll.mvfrm.rsp
+[243/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.dll.mvfrm.rsp
+[244/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll.mvfrm.rsp
+[245/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.rsp
+[246/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.dll.mvfrm.rsp
+[247/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.dll.mvfrm.rsp
+[248/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.rsp
+[249/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.rsp
+[250/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.rsp
+[251/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.rsp
+[252/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.rsp
+[253/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.rsp
+[254/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.rsp
+[255/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.rsp
+[256/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.rsp
+[257/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt
+[258/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp
+[259/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.rsp
+[260/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.rsp2
+[261/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.dll.mvfrm.rsp
+[262/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.rsp2
+[263/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp
+[264/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt
+[265/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.rsp2
+[266/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.rsp
+[267/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.UnityAdditionalFile.txt
+[268/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.rsp
+[269/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.rsp2
+[270/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.rsp
+[271/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.dll.mvfrm.rsp
+[272/425    0s] WriteText Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.UnityAdditionalFile.txt
+[273/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.WebGLModule.dll_1106F2B5DF9EE33A.mvfrm
+[274/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.dll.mvfrm
+[275/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.dll.mvfrm
+[276/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.dll (+2 others)
+[277/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[278/425    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.UI.dll
+[279/425    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.UI.pdb
+[280/425    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.pdb
+[281/425    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+[282/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UI.ref.dll_7A28423D4A766FDA.mvfrm
+[283/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TestRunner.ref.dll_50E26CF31C06CD18.mvfrm
+[284/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.dll.mvfrm
+[285/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[286/425    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.pdb
+[287/425    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+[288/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TestRunner.ref.dll_84C42244F0436F2D.mvfrm
+[289/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.dll.mvfrm
+[290/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[291/425    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.UI.pdb
+[292/425    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.UI.dll
+[293/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UI.ref.dll_BDC26BE24454476F.mvfrm
+[294/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.dll.mvfrm
+[295/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll.mvfrm
+[296/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.dll.mvfrm
+[297/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.dll.mvfrm
+[298/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.dll.mvfrm
+[299/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.dll.mvfrm
+[300/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.dll.mvfrm
+[301/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.dll.mvfrm
+[302/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.dll.mvfrm
+[303/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll.mvfrm
+[304/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.dll.mvfrm
+[305/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll (+2 others)
+[306/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.dll (+2 others)
+[307/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[308/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.pdb
+[309/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.dll
+[310/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+[311/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.pdb
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.InternalAPIEngineBridge.004.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[312/425    0s] CopyFiles Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.pdb
+[313/425    0s] CopyFiles Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll
+[314/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.dll (+2 others)
+[315/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.dll (+2 others)
+[316/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll (+2 others)
+[317/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.dll (+2 others)
+[318/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.dll (+2 others)
+[319/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[320/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Settings.Editor.dll
+[321/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Settings.Editor.pdb
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[322/425    0s] CopyFiles Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.pdb
+[323/425    0s] CopyFiles Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+[324/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Timeline.ref.dll_D34675E5055C5209.mvfrm
+[325/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll_C83781DD64A29266.mvfrm
+[326/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.InternalAPIEngineBridge.004.ref.dll_3585EADC0DC70DCC.mvfrm
+[327/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.pdb
+[328/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+[329/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Rider.Editor.dll
+[330/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Rider.Editor.pdb
+[331/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualStudio.Editor.pdb
+[332/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+[333/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Core.pdb
+[334/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+[335/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.dll (+2 others)
+[336/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.EditorCoroutines.Editor.ref.dll_63B9EB35A0645901.mvfrm
+[337/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Settings.Editor.ref.dll_77A5373D6A1F93D6.mvfrm
+[338/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll_A9B4CA1AA14E26F9.mvfrm
+[339/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Rider.Editor.ref.dll_BB682F4C994978A9.mvfrm
+[340/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualStudio.Editor.ref.dll_7E7DD2F3C2805153.mvfrm
+[341/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.dll.mvfrm
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[342/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.dll.mvfrm
+[343/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.Core.ref.dll_EA71DBF61AC412EE.mvfrm
+[344/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.pdb
+[345/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+[346/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll.mvfrm
+[347/425    2s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.dll (+2 others)
+[348/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Performance.Profile-Analyzer.Editor.ref.dll_C0422B8CE3C1BDD1.mvfrm
+[349/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.dll.mvfrm
+[350/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.dll.mvfrm
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[351/425    0s] CopyFiles Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+[352/425    0s] CopyFiles Library/ScriptAssemblies/Unity.PlasticSCM.Editor.pdb
+[353/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll (+2 others)
+[354/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.dll (+2 others)
+[355/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[356/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.PlasticSCM.Editor.ref.dll_9B6D9940AFF80C3C.mvfrm
+[357/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.pdb
+[358/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.dll
+[359/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+[360/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.pdb
+[361/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+[362/425    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.Editor.pdb
+[363/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.dll.mvfrm
+[364/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TextMeshPro.ref.dll_3701448EC0EF5C81.mvfrm
+[365/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TestTools.CodeCoverage.Editor.ref.dll_33A4BA77A8412D3F.mvfrm
+[366/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.dll.mvfrm
+[367/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Timeline.Editor.ref.dll_05875DFCD7CD8938.mvfrm
+[368/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.dll.mvfrm
+[369/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.dll.mvfrm
+[370/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.dll (+2 others)
+[371/425    2s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.dll (+2 others)
+[372/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.dll (+2 others)
+[373/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[374/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.dll (+2 others)
+[375/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Flow.pdb
+[376/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+[377/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.Entities.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.Analytics.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[378/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.Flow.ref.dll_3182BC4C9CCD879D.mvfrm
+[379/425    0s] CopyFiles Library/ScriptAssemblies/Unity.CollabProxy.Editor.pdb
+[380/425    0s] CopyFiles Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+[381/425    0s] CopyFiles Library/ScriptAssemblies/Unity.PlasticSCM.Editor.Entities.pdb
+[382/425    0s] CopyFiles Library/ScriptAssemblies/Unity.PlasticSCM.Editor.Entities.dll
+[383/425    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.UI.Analytics.pdb
+[384/425    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.UI.Analytics.dll
+[385/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.Editor.pdb
+[386/425    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+[387/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.pdb
+[388/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+[389/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UI.Analytics.ref.dll_05D8213CEFDD7017.mvfrm
+[390/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.dll.mvfrm
+[391/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TextMeshPro.Editor.ref.dll_E01181B6C057CE40.mvfrm
+[392/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.Core.Editor.ref.dll_83BC621B72BABDA3.mvfrm
+[393/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.dll.mvfrm
+[394/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[395/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+[396/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.State.pdb
+[397/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.State.ref.dll_255AEA40301341C8.mvfrm
+[398/425    1s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[399/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.pdb
+[400/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+[401/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.Flow.Editor.ref.dll_00ED4ACA819948E4.mvfrm
+[402/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.dll.mvfrm
+[403/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.dll.mvfrm
+[404/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[405/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.pdb
+[406/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+[407/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[408/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.SettingsProvider.Editor.ref.dll_95D4598D0844CFCE.mvfrm
+[409/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+[410/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.pdb
+[411/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.State.Editor.ref.dll_E0FF03DA7F2CFA69.mvfrm
+[412/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.dll.mvfrm
+[413/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000005]
+[414/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+[415/425    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.pdb
+[416/425    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualScripting.Shared.Editor.ref.dll_D971BCE13ACE101D.mvfrm
+[417/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.dll.mvfrm
+[418/425    0s] MovedFromExtractor-Combine Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm
+[419/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.dll (+2 others)
+[420/425    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[421/425    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[422/425    0s] Csc Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[423/425    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[424/425    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (17.68 seconds), 276 items updated, 425 evaluated
+AssetDatabase: script compilation time: 19.157918s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.111 seconds
+Start importing Assets/StreamingAssets using Guid(aba07e3da8c1d514f9f976150513724c) (DefaultImporter) -> (artifact id: '3d8502f8c0d691a71dbf4606e4f8e956') in 0.0155561 seconds
+Start importing Assets/StreamingAssets/Media using Guid(23ea646d31fa6a040bb7979a0096a40a) (DefaultImporter) -> (artifact id: '1c769963b4ffeff26971d2d63534993c') in 0.0038798 seconds
+Refreshing native plugins compatible for Editor in 6.90 ms, found 4 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.687 seconds
+Domain Reload Profiling: 1778ms
+	BeginReloadAssembly (398ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (40ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (135ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (606ms)
+		LoadAssemblies (598ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (183ms)
+			TypeCache.Refresh (147ms)
+				TypeCache.ScanAssembly (136ms)
+			BuildScriptInfoCaches (27ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (687ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (576ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (44ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (143ms)
+			ProcessInitializeOnLoadAttributes (328ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (23ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Start importing Assets/Scenes/2.unity using Guid(d22b852b60965ba4598b2f9d3934ddb9) (DefaultImporter) -> (artifact id: '06973bd0313012937bd2c4c6bae7c88b') in 0.0015166 seconds
+Start importing Assets/Scenes/Start.unity using Guid(b5629c808ca0e4f4382a29dc4291f57d) (DefaultImporter) -> (artifact id: 'ba55afffefc06d3fb250cb34b42a828a') in 0.0009822 seconds
+Start importing Assets/Scenes/5.unity using Guid(ca96e2b7a5f810241a10f4484f225cf3) (DefaultImporter) -> (artifact id: 'eb074b1d43c4614706cfae46e84fd984') in 0.0010456 seconds
+Start importing Assets/Scenes/4.unity using Guid(ac41f4becfd81db47882a15aa08ce965) (DefaultImporter) -> (artifact id: '4300e96a761c6f812fe02f3e0b411e5e') in 0.0011474 seconds
+Start importing Assets/Scenes/3.unity using Guid(fc482a347263d304a9c8126a8113e150) (DefaultImporter) -> (artifact id: 'fd3845ac5c192588d92209a12abb77c0') in 0.0012464 seconds
+Start importing Assets/Scenes/1.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) (DefaultImporter) -> (artifact id: '56e14c264af197121cf523bc44cc2126') in 0.0011747 seconds
+Start importing Assets/StreamingAssets/Media/nanjing_01.mp4 using Guid(f0db96c772daaa940bae6be107ddaf65) (DefaultImporter) -> (artifact id: 'e6c5c090c14c6095c5d8dfa54a771179') in 0.0855545 seconds
+Start importing Assets/StreamingAssets/Media/wuxi_05.mp4 using Guid(51cb78fd170cd2c43b3f3302500bea0c) (DefaultImporter) -> (artifact id: 'd16c2dacb7acda4128d28e213abdd25f') in 0.0043698 seconds
+Start importing Assets/StreamingAssets/Media/yangzhou_03.mp4 using Guid(520ea09a7c8ab4b4aaa9dee16eb4163a) (DefaultImporter) -> (artifact id: 'ab6d42f937e65a68824af0ba648474e9') in 0.0043345 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_02.mp4 using Guid(f41fabf4a6af3df4eb7cc29add77eae8) (DefaultImporter) -> (artifact id: '1d7750e5fa459d710b701813a9cc1886') in 0.0038452 seconds
+Start importing Assets/StreamingAssets/Media/huaian_04.mp4 using Guid(5576fdc36b30be1409984b1fbbfb940b) (DefaultImporter) -> (artifact id: 'e1a3a1a361a119dcf425b12c83e2d1b6') in 0.0038748 seconds
+Start importing Assets/StreamingAssets/Media/huaian_06.mp4 using Guid(b5e6648bf92ea9f4680426d3cf17051e) (DefaultImporter) -> (artifact id: 'e077a10d9e2f05a9ebf2b5b708e7dc61') in 0.004374 seconds
+Start importing Assets/StreamingAssets/Media/nanjing_05.mp4 using Guid(46d1e00791d719d4ebcfae0744394243) (DefaultImporter) -> (artifact id: 'ce2e15c1648dc06ac6f36b8e8b060b16') in 0.0047356 seconds
+Start importing Assets/StreamingAssets/Media/huaian_01.mp4 using Guid(5649aa9876f7a2e4aaf5c09e42cd8b54) (DefaultImporter) -> (artifact id: '0780b78aed0eddddc059a39c584009aa') in 0.0049023 seconds
+Start importing Assets/StreamingAssets/Media/huaian_02.mp4 using Guid(862e93712a121d8498d73c1fdd4e4c09) (DefaultImporter) -> (artifact id: 'dab945bdf5e4539a9208a1a18beba567') in 0.0043836 seconds
+Start importing Assets/StreamingAssets/Media/wuxi_02.mp4 using Guid(07a38aa30c2706142b662dcb04785fe2) (DefaultImporter) -> (artifact id: '7a0a15be87cea3375466aeb3a1aabe43') in 0.0041515 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_07.mp4 using Guid(58ac1ea91b46d424dbb8a3f0742591f7) (DefaultImporter) -> (artifact id: 'd303f67203109dca820c9d6ec5b9b916') in 0.0040585 seconds
+Start importing Assets/StreamingAssets/Media/wuxi_04.mp4 using Guid(98316cacd1a490f47a7ac2d3a2e9a40e) (DefaultImporter) -> (artifact id: '7c3a4ac49741b24efadf6c41792b64ae') in 0.004596 seconds
+Start importing Assets/StreamingAssets/Media/yangzhou_04.mp4 using Guid(e83430045358b144480a3f761dd5ca8c) (DefaultImporter) -> (artifact id: '2dbc4f09140e2e593d2d24ce4821b6e6') in 0.0046312 seconds
+Start importing Assets/StreamingAssets/Media/nanjing_03.mp4 using Guid(39da048312db2fa4486eb3bb39e6ab10) (DefaultImporter) -> (artifact id: 'afdd720e5dfc1d724033d8cc090394b0') in 0.0043907 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_03.mp4 using Guid(69714292d180fa545bde2b1f7ac6bac3) (DefaultImporter) -> (artifact id: 'd568422f9d8e96f3ad77bc4240bd5053') in 0.0042258 seconds
+Start importing Assets/StreamingAssets/Media/nanjing_02.mp4 using Guid(d9f7394a255d2a84fa3937cd30103068) (DefaultImporter) -> (artifact id: '5019fd2025146c15739df29e9dd53fc4') in 0.0042563 seconds
+Start importing Assets/StreamingAssets/Media/yangzhou_06.mp4 using Guid(0a31fc181bdd821408608b87918ec489) (DefaultImporter) -> (artifact id: '97664fe67dbca6f7d8db572c67b6c413') in 0.0040669 seconds
+Start importing Assets/StreamingAssets/Media/wuxi_03.mp4 using Guid(2abf9e30fb8029b4d9ba3407f9187ca6) (DefaultImporter) -> (artifact id: 'aa868ed2ae44d89b98747553d607f100') in 0.0030651 seconds
+Start importing Assets/StreamingAssets/Media/yangzhou_02.mp4 using Guid(da7b8c2e1ab2b7d4ead5d4415630d35f) (DefaultImporter) -> (artifact id: 'ee139233236223a72cbc68e211dce9b1') in 0.0032092 seconds
+Start importing Assets/StreamingAssets/Media/yangzhou_05.mp4 using Guid(3bc3be28940c9044ca4e1b52169b36c5) (DefaultImporter) -> (artifact id: '8032792deef9d6d77b368efb31e68ac1') in 0.0039344 seconds
+Start importing Assets/StreamingAssets/Media/wuxi_01.mp4 using Guid(6b4b2abc33dea5e45963428a44125426) (DefaultImporter) -> (artifact id: '2d19615b20aafc86896ac35a342fbe6c') in 0.0042694 seconds
+Start importing Assets/StreamingAssets/Media/intro.mp4 using Guid(6b1c6fbd1880ecb4ca5d5b61ab69c10f) (DefaultImporter) -> (artifact id: '1437d7a08858caae12bd3ba093c86212') in 0.0035236 seconds
+Start importing Assets/StreamingAssets/Media/nanjing_04.mp4 using Guid(bbfd635292982c540ba6064d8d006525) (DefaultImporter) -> (artifact id: '96acd29bd741933711667490415e29be') in 0.0039715 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_01.mp4 using Guid(0c02fdbe56ca4bf43a6391500fa1861e) (DefaultImporter) -> (artifact id: '7eedad5f3269718a459652277a8a4dd0') in 0.0042971 seconds
+Start importing Assets/StreamingAssets/Media/yangzhou_01.mp4 using Guid(ac0c40350b79f6c44b66ae632bc7be97) (DefaultImporter) -> (artifact id: '620c8e699b91e66c319fa55099799c17') in 0.0039565 seconds
+Start importing Assets/StreamingAssets/Media/huaian_03.mp4 using Guid(bc3a617d9e23c4a41a948fc4d96dd53c) (DefaultImporter) -> (artifact id: 'a7794cf976b7759e159e93472348a3dd') in 0.0040013 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_04.mp4 using Guid(2dd98921c0a90234d825c1614c533719) (DefaultImporter) -> (artifact id: '7618f834549b8bfaa0030b30915d1b6d') in 0.0043599 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_06.mp4 using Guid(4d8e73d31e56b5e438f2e89c174a2077) (DefaultImporter) -> (artifact id: '244f7ce3716292467ed1455d6380b4ff') in 0.0035178 seconds
+Start importing Assets/StreamingAssets/Media/suzhou_05.mp4 using Guid(5ee9e023a5e91424798634adf952ba33) (DefaultImporter) -> (artifact id: '918c198e24b037235dfa4aca221a9c82') in 0.0049871 seconds
+Start importing Assets/StreamingAssets/Media/huaian_05.mp4 using Guid(0f8066dca05716f4eb4809b305f6b4b1) (DefaultImporter) -> (artifact id: 'c226ea17836e77eee43910f9fb704262') in 0.0038673 seconds
+Start importing Assets/Resources/CityData/2.json using Guid(d3f64e68027f67447a781c5e499540b0) (TextScriptImporter) -> (artifact id: '6c828fad2e176ea11274c385a7177c5a') in 0.0040656 seconds
+Start importing Assets/Resources/CityData/4.json using Guid(9916fef5e48efe54d9ed34cf3810e520) (TextScriptImporter) -> (artifact id: 'cc70f7043e50b523627d55bf08c848df') in 0.0034048 seconds
+Start importing Assets/Resources/CityData/3.json using Guid(d910ec3d59c700d418002d740b1933bc) (TextScriptImporter) -> (artifact id: 'd80f8b64707e77050bbf5adc1b1dabf7') in 0.0038808 seconds
+Start importing Assets/Resources/CityData/1.json using Guid(cb04c07432a312f489a6ee6d7a11d02c) (TextScriptImporter) -> (artifact id: '614e8f587bf7991be24ec6549870f651') in 0.0037844 seconds
+Start importing Assets/Resources/CityData/5.json using Guid(bf7b0979604a061409c1f2117ff397f4) (TextScriptImporter) -> (artifact id: '73148f4ebeae664b6c1323cbc6c2df99') in 0.0048673 seconds
+Refreshing native plugins compatible for Editor in 6.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e5a365dad84148f4d895c34363f12d4a): Total: 22.173 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=43 (actual=43, local cache=0, cache server=0)
+		Asset DB Process Time: managed=4 ms, native=1591 ms
+		Asset DB Callback time: managed=84 ms, native=167 ms
+		Scripting: domain reloads=1, domain reload time=1112 ms, compile time=19160 ms, other=54 ms
+		Project Asset Count: scripts=712, non-scripts=773
+		Asset File Changes: new=33, changed=48, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 159.999ms
+	ApplyChangesToAssetFolders: 1.162ms
+	Scan: 361.918ms
+	OnSourceAssetsModified: 0.846ms
+	CategorizeAssetsWithTransientArtifact: 36.946ms
+	ProcessAssetsWithTransientArtifactChanges: 41.883ms
+	CategorizeAssets: 8.653ms
+	ImportOutOfDateAssets: 983.584ms (-18453.091ms without children)
+		ImportManagerImport: 276.343ms (5.126ms without children)
+			ImportInProcess: 270.804ms
+			UpdateCategorizedAssets: 0.413ms
+		CompileScripts: 19159.623ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.202ms
+		ReloadImportedAssets: 0.002ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.176ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.323ms
+	PostProcessAllAssets: 88.658ms
+	Hotreload: 9.207ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 1.065ms
+	PersistCurrentRevisions: 0.524ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.802ms
+	Untracked: 20478.467ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 2.553ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-JiangnanProject
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3682 unused Assets / (1.7 MB). Loaded Objects now: 4302.
+Memory consumption went from 127.6 MB to 125.9 MB.
+Total: 5.458100 ms (FindLiveObjects: 0.315900 ms CreateObjectMapping: 0.329100 ms MarkObjects: 3.696900 ms  DeleteObjects: 1.115500 ms)
+
+Batchmode quit successfully invoked - shutting down!
+Curl error 42: Callback aborted
+Killing ADB server in 2.1058018 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-chenerxiao-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-chenerxiao channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

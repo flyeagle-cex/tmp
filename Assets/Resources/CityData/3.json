@@ -1,0 +1,225 @@
+{
+  "cityId": "wuxi",
+  "sceneName": "3",
+  "cityNameZh": "无锡",
+  "cityNameEn": "Wuxi",
+  "titleZh": "太湖风物与城市文化互动体验",
+  "titleEn": "An Interactive Journey through Taihu Landscapes and Culture",
+  "segments": [
+    {
+      "segmentId": "wuxi_yuantouzhu",
+      "chapterZh": "鼋头渚",
+      "chapterEn": "Yuantouzhu",
+      "question": {
+        "questionId": "wuxi_q01",
+        "questionZh": "“鼋头渚”的名字中，“渚”是什么意思？",
+        "questionEn": "In the name Yuantouzhu, what does the character “zhu” mean?",
+        "options": [
+          {
+            "optionId": "fish",
+            "textZh": "A. 一种大鱼",
+            "textEn": "A. A large fish"
+          },
+          {
+            "optionId": "islet",
+            "textZh": "B. 水中的小块陆地",
+            "textEn": "B. A small piece of land in the water"
+          },
+          {
+            "optionId": "mountain",
+            "textZh": "C. 一座高山",
+            "textEn": "C. A high mountain"
+          },
+          {
+            "optionId": "boat",
+            "textZh": "D. 一种船",
+            "textEn": "D. A type of boat"
+          }
+        ],
+        "correctOptionId": "islet",
+        "successZh": "太湖最美的风景，果然还是在鼋头渚！",
+        "successEn": "Wonderful! Yuantouzhu offers some of the finest views of Lake Taihu."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 19.0,
+          "chinese": "鼋头渚伸入太湖，形似鼋首，是观赏湖光山色的胜地。",
+          "english": "Yuantouzhu extends into Lake Taihu like a turtle's head and offers celebrated lake views."
+        },
+        {
+          "startTime": 19.0,
+          "endTime": 39.8,
+          "chinese": "“渚”指水中的小块陆地，名字也记录了这里的地貌。",
+          "english": "The word “zhu” means a small islet, describing the site's natural form."
+        }
+      ],
+      "mediaFile": "wuxi_01.mp4",
+      "sourceGuid": "03ed3c03324e8084c9314c4f87882fd0"
+    },
+    {
+      "segmentId": "wuxi_xiaolongbao",
+      "chapterZh": "无锡小笼包",
+      "chapterEn": "Wuxi Xiaolongbao",
+      "question": {
+        "questionId": "wuxi_q02",
+        "questionZh": "无锡小笼包和其他地方的小笼包相比，最大的特点是味道偏甜。",
+        "questionEn": "Compared with xiaolongbao from other regions, Wuxi xiaolongbao is best known for its sweeter flavor.",
+        "options": [
+          {
+            "optionId": "true",
+            "textZh": "正确",
+            "textEn": "True"
+          },
+          {
+            "optionId": "false",
+            "textZh": "错误",
+            "textEn": "False"
+          }
+        ],
+        "correctOptionId": "true",
+        "successZh": "我们常说“一笼小笼包”，因为它是用蒸笼蒸的。“笼”既是名词，也是量词。",
+        "successEn": "We say “a steamer basket of xiaolongbao” because they are steamed in bamboo baskets; the same word also serves as a measure word."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 11.0,
+          "chinese": "无锡小笼包皮薄馅润，汤汁鲜甜。",
+          "english": "Wuxi xiaolongbao has delicate wrappers, juicy fillings, and a gently sweet flavor."
+        },
+        {
+          "startTime": 11.0,
+          "endTime": 23.8,
+          "chinese": "它装在蒸笼里上桌，也留下了“一笼”这一生动量词。",
+          "english": "Served in bamboo steamers, it gives rise to the vivid measure word “one basket.”"
+        }
+      ],
+      "mediaFile": "wuxi_02.mp4",
+      "sourceGuid": "41c8b249290e8d74eb225a7c0a279a30"
+    },
+    {
+      "segmentId": "wuxi_crab",
+      "chapterZh": "湖鲜风味",
+      "chapterEn": "Flavors from the Lake",
+      "question": {
+        "questionId": "wuxi_q03",
+        "questionZh": "大闸蟹最肥美的季节是什么时候？",
+        "questionEn": "In which season are Chinese mitten crabs at their richest?",
+        "options": [
+          {
+            "optionId": "spring",
+            "textZh": "A. 春天",
+            "textEn": "A. Spring"
+          },
+          {
+            "optionId": "summer",
+            "textZh": "B. 夏天",
+            "textEn": "B. Summer"
+          },
+          {
+            "optionId": "autumn",
+            "textZh": "C. 秋天",
+            "textEn": "C. Autumn"
+          },
+          {
+            "optionId": "winter",
+            "textZh": "D. 冬天",
+            "textEn": "D. Winter"
+          }
+        ],
+        "correctOptionId": "spring",
+        "successZh": "一只蟹能吃上一个小时！",
+        "successEn": "A single crab can be enjoyed slowly for an entire hour!"
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 10.0,
+          "chinese": "太湖水产丰富，湖鲜是无锡饮食文化的重要部分。",
+          "english": "Lake Taihu's abundant produce is an important part of Wuxi's food culture."
+        },
+        {
+          "startTime": 10.0,
+          "endTime": 21.8,
+          "chinese": "品蟹讲究时令，也讲究耐心体会鲜美滋味。",
+          "english": "Enjoying crab is about seasonality and taking time to appreciate its flavor."
+        }
+      ],
+      "mediaFile": "wuxi_03.mp4",
+      "sourceGuid": "d18e4538eccf21b438412b780cb31154"
+    },
+    {
+      "segmentId": "wuxi_erhu",
+      "chapterZh": "二胡名曲",
+      "chapterEn": "The Sound of the Erhu",
+      "question": {
+        "questionId": "wuxi_q04",
+        "questionZh": "这首曲子给你什么感觉？请用一个词来形容。",
+        "questionEn": "How does this piece of music make you feel? Choose one word.",
+        "options": [
+          {
+            "optionId": "sad",
+            "textZh": "A. 悲伤",
+            "textEn": "A. Sorrowful"
+          },
+          {
+            "optionId": "gentle",
+            "textZh": "B. 温柔",
+            "textEn": "B. Gentle"
+          },
+          {
+            "optionId": "peaceful",
+            "textZh": "C. 宁静",
+            "textEn": "C. Peaceful"
+          },
+          {
+            "optionId": "happy",
+            "textZh": "D. 幸福",
+            "textEn": "D. Joyful"
+          }
+        ],
+        "correctOptionId": "peaceful",
+        "successZh": "他的音乐格外动人。",
+        "successEn": "The music has a uniquely moving quality."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 15.0,
+          "chinese": "无锡与民间音乐家华彦钧的二胡艺术紧密相连。",
+          "english": "Wuxi is closely associated with the erhu artistry of folk musician Hua Yanjun."
+        },
+        {
+          "startTime": 15.0,
+          "endTime": 30.8,
+          "chinese": "弓弦之间，细腻情感化作悠长而动人的旋律。",
+          "english": "Between bow and strings, subtle emotions become long and deeply moving melodies."
+        }
+      ],
+      "mediaFile": "wuxi_04.mp4",
+      "sourceGuid": "5a25994caf4ff7947b12e10b17ced11f"
+    },
+    {
+      "segmentId": "wuxi_ending",
+      "chapterZh": "无锡印象",
+      "chapterEn": "Memories of Wuxi",
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 11.0,
+          "chinese": "太湖风景、江南味道和二胡旋律共同讲述着无锡。",
+          "english": "Lake scenery, Jiangnan flavors, and erhu melodies tell the story of Wuxi."
+        },
+        {
+          "startTime": 11.0,
+          "endTime": 21.8,
+          "chinese": "让我们带着湖光与乐声，继续下一段旅程。",
+          "english": "Carry the shimmer of the lake and its music into the next part of our journey."
+        }
+      ],
+      "mediaFile": "wuxi_05.mp4",
+      "sourceGuid": "1561c27ddfbca3a45ad4a4cfcee32a75"
+    }
+  ]
+}

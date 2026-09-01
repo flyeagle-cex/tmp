@@ -1,0 +1,276 @@
+{
+  "cityId": "yangzhou",
+  "sceneName": "1",
+  "cityNameZh": "扬州",
+  "cityNameEn": "Yangzhou",
+  "titleZh": "江南运河文化互动体验",
+  "titleEn": "An Interactive Journey through Grand Canal Culture",
+  "segments": [
+    {
+      "segmentId": "yangzhou_grand_canal",
+      "chapterZh": "大运河",
+      "chapterEn": "The Grand Canal",
+      "question": {
+        "questionId": "yangzhou_q01",
+        "questionZh": "大运河是一条什么样的河流？",
+        "questionEn": "What kind of waterway is the Grand Canal?",
+        "options": [
+          {
+            "optionId": "natural_river",
+            "textZh": "A. 大自然自然形成的河流",
+            "textEn": "A. A river formed naturally"
+          },
+          {
+            "optionId": "man_made_canal",
+            "textZh": "B. 古人亲手挖掘的人工河流",
+            "textEn": "B. A man-made waterway dug by people"
+          },
+          {
+            "optionId": "rainwater_river",
+            "textZh": "C. 下雨天积水形成的河流",
+            "textEn": "C. A waterway formed by accumulated rain"
+          },
+          {
+            "optionId": "seawater_river",
+            "textZh": "D. 海水倒灌形成的河流",
+            "textEn": "D. A waterway formed by seawater flowing inland"
+          }
+        ],
+        "correctOptionId": "man_made_canal",
+        "successZh": "太棒了！大运河可是古人用双手创造的奇迹哦！",
+        "successEn": "Excellent! The Grand Canal is an extraordinary feat created by generations of people."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 26.0,
+          "chinese": "扬州因大运河而兴，千百年来舟楫往来、商旅云集。",
+          "english": "Yangzhou prospered beside the Grand Canal, welcoming boats and merchants for centuries."
+        },
+        {
+          "startTime": 26.0,
+          "endTime": 66.8,
+          "chinese": "这条人工水道连接南北，也把多样的文化带到扬州。",
+          "english": "This man-made waterway links northern and southern China and carries diverse cultures to Yangzhou."
+        }
+      ],
+      "mediaFile": "yangzhou_01.mp4",
+      "sourceGuid": "9f258d5c4c16502428d53dd5f52c96e7"
+    },
+    {
+      "segmentId": "yangzhou_slender_west_lake",
+      "chapterZh": "瘦西湖",
+      "chapterEn": "Slender West Lake",
+      "question": {
+        "questionId": "yangzhou_q02",
+        "questionZh": "“瘦西湖”这个名字里的“瘦”是什么意思？",
+        "questionEn": "What does “slender” mean in the name Slender West Lake?",
+        "options": [
+          {
+            "optionId": "shallow",
+            "textZh": "A. 湖水很浅，快要干涸了",
+            "textEn": "A. The lake is shallow and nearly dry"
+          },
+          {
+            "optionId": "narrow_graceful",
+            "textZh": "B. 湖形狭长秀气，和杭州西湖相比更“苗条”",
+            "textEn": "B. Its long, narrow shape looks graceful beside Hangzhou's West Lake"
+          },
+          {
+            "optionId": "slender_people",
+            "textZh": "C. 湖边的人都很瘦",
+            "textEn": "C. Everyone living by the lake is slender"
+          },
+          {
+            "optionId": "slender_fish",
+            "textZh": "D. 湖里的鱼很瘦",
+            "textEn": "D. The fish in the lake are slender"
+          }
+        ],
+        "correctOptionId": "narrow_graceful",
+        "successZh": "答对啦！瘦西湖的“瘦”是形容它狭长秀美的样子。",
+        "successEn": "Correct! “Slender” describes the lake's long, narrow, and graceful form."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 25.0,
+          "chinese": "瘦西湖水道蜿蜒，亭台桥影沿岸展开。",
+          "english": "Slender West Lake winds past pavilions and bridges reflected along its banks."
+        },
+        {
+          "startTime": 25.0,
+          "endTime": 53.8,
+          "chinese": "“瘦”写出了湖面狭长、清秀而灵动的形态。",
+          "english": "The word “slender” captures its long, delicate, and lively form."
+        }
+      ],
+      "mediaFile": "yangzhou_02.mp4",
+      "sourceGuid": "694a2aa871c26a64ba962ef5d52ea921"
+    },
+    {
+      "segmentId": "yangzhou_lacquerware",
+      "chapterZh": "扬州漆器",
+      "chapterEn": "Yangzhou Lacquerware",
+      "question": {
+        "questionId": "yangzhou_q03",
+        "questionZh": "扬州漆器制作很简单，工匠一天就能做好一件。",
+        "questionEn": "Yangzhou lacquerware is simple to make and can be finished in one day.",
+        "options": [
+          {
+            "optionId": "true",
+            "textZh": "正确",
+            "textEn": "True"
+          },
+          {
+            "optionId": "false",
+            "textZh": "错误",
+            "textEn": "False"
+          }
+        ],
+        "correctOptionId": "false",
+        "successZh": "漆器需要几十道工序、好几个月才能完成哦！",
+        "successEn": "A lacquerware piece may require dozens of processes and several months to complete."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 21.0,
+          "chinese": "扬州漆器以细腻髹饰和精巧工艺闻名。",
+          "english": "Yangzhou lacquerware is renowned for refined coatings and intricate craftsmanship."
+        },
+        {
+          "startTime": 21.0,
+          "endTime": 43.8,
+          "chinese": "一件作品要经历反复上漆、打磨与装饰，凝聚工匠耐心。",
+          "english": "Each piece is repeatedly lacquered, polished, and decorated through patient handwork."
+        }
+      ],
+      "mediaFile": "yangzhou_03.mp4",
+      "sourceGuid": "6b55af4bc022f88478769c4c7a6511ee"
+    },
+    {
+      "segmentId": "yangzhou_cuisine",
+      "chapterZh": "淮扬美食",
+      "chapterEn": "Huaiyang Cuisine",
+      "question": {
+        "questionId": "yangzhou_q04",
+        "questionZh": "这（  ）烫干丝切得真细！",
+        "questionEn": "The shredded tofu in this (  ) of blanched tofu is cut so finely!",
+        "options": [
+          {
+            "optionId": "dish",
+            "textZh": "道",
+            "textEn": "dish"
+          },
+          {
+            "optionId": "bowl",
+            "textZh": "碗",
+            "textEn": "bowl"
+          },
+          {
+            "optionId": "piece",
+            "textZh": "块",
+            "textEn": "piece"
+          },
+          {
+            "optionId": "generic",
+            "textZh": "个",
+            "textEn": "item"
+          }
+        ],
+        "correctOptionId": "dish",
+        "successZh": "你已经是扬州美食小达人啦！",
+        "successEn": "You are becoming a true Yangzhou food expert!"
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 25.0,
+          "chinese": "烫干丝讲究刀工，豆腐干要切得均匀如丝。",
+          "english": "Blanched shredded tofu showcases knife skills: every strand should be fine and even."
+        },
+        {
+          "startTime": 25.0,
+          "endTime": 53.8,
+          "chinese": "清鲜雅致的味道体现了淮扬菜细腻平和的风格。",
+          "english": "Its delicate freshness reflects the refined and balanced character of Huaiyang cuisine."
+        }
+      ],
+      "mediaFile": "yangzhou_04.mp4",
+      "sourceGuid": "a5e11169a396fde41b91645b9b213e28"
+    },
+    {
+      "segmentId": "yangzhou_poetry",
+      "chapterZh": "诗意扬州",
+      "chapterEn": "Yangzhou in Poetry",
+      "question": {
+        "questionId": "yangzhou_q05",
+        "questionZh": "春江潮水连海平，海上明月共（  ）生。",
+        "questionEn": "Complete the line: “The spring river rises level with the sea; above the sea the bright moon rises with the ____.”",
+        "options": [
+          {
+            "optionId": "tide",
+            "textZh": "A. 潮",
+            "textEn": "A. tide"
+          },
+          {
+            "optionId": "water",
+            "textZh": "B. 水",
+            "textEn": "B. water"
+          },
+          {
+            "optionId": "wind",
+            "textZh": "C. 风",
+            "textEn": "C. wind"
+          },
+          {
+            "optionId": "cloud",
+            "textZh": "D. 云",
+            "textEn": "D. clouds"
+          }
+        ],
+        "correctOptionId": "tide",
+        "successZh": "你已经领略到唐代诗人的浪漫啦！",
+        "successEn": "You have discovered the romance of Tang-dynasty poetry!"
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 32.0,
+          "chinese": "扬州常在诗词中与春风、明月和江潮相遇。",
+          "english": "In poetry, Yangzhou often appears with spring breezes, moonlight, and the river tide."
+        },
+        {
+          "startTime": 32.0,
+          "endTime": 67.8,
+          "chinese": "《春江花月夜》把江水、月色与人的情思融为一体。",
+          "english": "A Moonlit Night on the Spring River brings water, moonlight, and human longing together."
+        }
+      ],
+      "mediaFile": "yangzhou_05.mp4",
+      "sourceGuid": "e495a2ee7f901fe49bcf0f113353c05c"
+    },
+    {
+      "segmentId": "yangzhou_ending",
+      "chapterZh": "扬州印象",
+      "chapterEn": "Memories of Yangzhou",
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 12.0,
+          "chinese": "从运河到园林，从手艺到诗歌，扬州的文化在生活中延续。",
+          "english": "From canals and gardens to crafts and poetry, Yangzhou's culture lives on in everyday life."
+        },
+        {
+          "startTime": 12.0,
+          "endTime": 24.8,
+          "chinese": "带着这份江南记忆，准备前往下一座城市。",
+          "english": "Carry these Jiangnan memories with you as we travel to the next city."
+        }
+      ],
+      "mediaFile": "yangzhou_06.mp4",
+      "sourceGuid": "5b9d725275d329244ad18427efa5ff50"
+    }
+  ]
+}

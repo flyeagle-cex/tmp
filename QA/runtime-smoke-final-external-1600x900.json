@@ -1,0 +1,59 @@
+{
+    "unityVersion": "6000.3.22f1",
+    "generatedAt": "2026-09-01 11:01:57",
+    "scenes": [
+        {
+            "scene": "1",
+            "city": "yangzhou",
+            "introReady": true,
+            "audioReady": true,
+            "languageReady": true,
+            "subtitlesReady": true,
+            "resolutionSafe": true,
+            "passed": true
+        },
+        {
+            "scene": "2",
+            "city": "huaian",
+            "introReady": true,
+            "audioReady": true,
+            "languageReady": true,
+            "subtitlesReady": true,
+            "resolutionSafe": true,
+            "passed": true
+        },
+        {
+            "scene": "3",
+            "city": "wuxi",
+            "introReady": true,
+            "audioReady": true,
+            "languageReady": true,
+            "subtitlesReady": true,
+            "resolutionSafe": true,
+            "passed": true
+        },
+        {
+            "scene": "4",
+            "city": "suzhou",
+            "introReady": true,
+            "audioReady": true,
+            "languageReady": true,
+            "subtitlesReady": true,
+            "resolutionSafe": true,
+            "passed": true
+        },
+        {
+            "scene": "5",
+            "city": "nanjing",
+            "introReady": true,
+            "audioReady": true,
+            "languageReady": true,
+            "subtitlesReady": true,
+            "resolutionSafe": true,
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "warnings": [],
+    "passed": true
+}

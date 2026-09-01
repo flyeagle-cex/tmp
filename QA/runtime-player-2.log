@@ -1,0 +1,58 @@
+Mono path[0] = 'C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject/Builds/Windows/JiangnanProject_Data/Managed'
+Mono config path = 'C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject/Builds/Windows/MonoBleedingEdge/etc'
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.3.22f1 (1c726e1fb402)
+[Subsystems] Discovering subsystems at path C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject/Builds/Windows/JiangnanProject_Data/UnitySubsystems
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 5060 Laptop GPU (ID=0x2d59)
+    Vendor:   NVIDIA
+    VRAM:     7810 MB
+    Driver:   32.0.15.7324
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.138 seconds
+- Finished resetting the current domain, in  0.002 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+UnloadTime: 0.374700 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.229700 ms
+Color primaries 0 is unknown or unsupported by WindowsMediaFoundation. Falling back to default may result in color shift. C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\Builds\Windows\JiangnanProject_Data\sharedassets0.resource
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1498.
+Total: 0.735600 ms (FindLiveObjects: 0.048700 ms CreateObjectMapping: 0.014500 ms MarkObjects: 0.634100 ms  DeleteObjects: 0.038200 ms)
+
+Playing city segment: ����1
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.208200 ms
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1499.
+Total: 1.124600 ms (FindLiveObjects: 0.044300 ms CreateObjectMapping: 0.013900 ms MarkObjects: 1.058300 ms  DeleteObjects: 0.007800 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.324400 ms
+Unexpected timestamp values detected. This can occur in H.264 videos not encoded with the baseline profile. Timestamps will be skewed to correct the playback for C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject/Builds/Windows/JiangnanProject_Data/sharedassets2.resource
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1497.
+Total: 0.996200 ms (FindLiveObjects: 0.042600 ms CreateObjectMapping: 0.013700 ms MarkObjects: 0.929400 ms  DeleteObjects: 0.010200 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.319300 ms
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1499.
+Total: 0.710500 ms (FindLiveObjects: 0.043000 ms CreateObjectMapping: 0.014800 ms MarkObjects: 0.644200 ms  DeleteObjects: 0.008200 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.682600 ms
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1498.
+Total: 0.867000 ms (FindLiveObjects: 0.048700 ms CreateObjectMapping: 0.017300 ms MarkObjects: 0.792100 ms  DeleteObjects: 0.008800 ms)
+
+JIANGNAN_RUNTIME_SMOKE_PASS
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.

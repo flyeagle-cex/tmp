@@ -1,0 +1,276 @@
+{
+  "cityId": "huaian",
+  "sceneName": "2",
+  "cityNameZh": "淮安",
+  "cityNameEn": "Huai'an",
+  "titleZh": "运河枢纽与南北文化互动体验",
+  "titleEn": "An Interactive Journey through Canal Crossroads and Culture",
+  "segments": [
+    {
+      "segmentId": "huaian_qingjiangpu",
+      "chapterZh": "清江浦",
+      "chapterEn": "Qingjiangpu",
+      "question": {
+        "questionId": "huaian_q01",
+        "questionZh": "淮安的清江浦为什么被称为大运河的“十字路口”？",
+        "questionEn": "Why is Qingjiangpu in Huai'an known as the Grand Canal's “crossroads”?",
+        "options": [
+          {
+            "optionId": "roads",
+            "textZh": "A. 因为这里有四条马路交叉",
+            "textEn": "A. Four roads intersect here"
+          },
+          {
+            "optionId": "waterways",
+            "textZh": "B. 因为京杭大运河和淮河在这里交汇，是漕运必经之地",
+            "textEn": "B. The Grand Canal and Huai River meet here on a vital grain-transport route"
+          },
+          {
+            "optionId": "downtown",
+            "textZh": "C. 因为这里是淮安的市中心",
+            "textEn": "C. It is downtown Huai'an"
+          },
+          {
+            "optionId": "bridges",
+            "textZh": "D. 因为这里有十座桥",
+            "textEn": "D. There are ten bridges here"
+          }
+        ],
+        "correctOptionId": "waterways",
+        "successZh": "太棒了！清江浦可是古代运河上最繁忙的交通枢纽哦！",
+        "successEn": "Excellent! Qingjiangpu was one of the busiest transport hubs on the historic canal."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 28.0,
+          "chinese": "清江浦位于运河与淮河交汇处，是南船北马转换的重要节点。",
+          "english": "Qingjiangpu stands where the canal meets the Huai River, a key transfer point between north and south."
+        },
+        {
+          "startTime": 28.0,
+          "endTime": 58.8,
+          "chinese": "漕粮、商货和旅人曾在这里汇聚，使淮安成为运河重镇。",
+          "english": "Grain, goods, and travelers converged here, making Huai'an a major canal city."
+        }
+      ],
+      "mediaFile": "huaian_01.mp4",
+      "sourceGuid": "4155e13438d52ef4786af9a4c434657b"
+    },
+    {
+      "segmentId": "huaian_hexia",
+      "chapterZh": "河下古镇",
+      "chapterEn": "Hexia Ancient Town",
+      "question": {
+        "questionId": "huaian_q02",
+        "questionZh": "河下古镇是一个只有几十年历史的新建小镇。",
+        "questionEn": "Hexia Ancient Town is a newly built town with only a few decades of history.",
+        "options": [
+          {
+            "optionId": "true",
+            "textZh": "正确",
+            "textEn": "True"
+          },
+          {
+            "optionId": "false",
+            "textZh": "错误",
+            "textEn": "False"
+          }
+        ],
+        "correctOptionId": "false",
+        "successZh": "河下古镇已经有2500多年历史啦！",
+        "successEn": "Hexia Ancient Town has a history of more than 2,500 years!"
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 21.0,
+          "chinese": "河下古镇因运河而繁荣，街巷格局保存着悠久记忆。",
+          "english": "Hexia prospered through canal trade, and its lanes preserve memories of a long history."
+        },
+        {
+          "startTime": 21.0,
+          "endTime": 42.8,
+          "chinese": "古镇的宅院、牌坊与码头见证了淮安昔日的兴盛。",
+          "english": "Its residences, gateways, and wharves recall Huai'an's former prosperity."
+        }
+      ],
+      "mediaFile": "huaian_02.mp4",
+      "sourceGuid": "ac47f3ca822ec804fadeed18533730c2"
+    },
+    {
+      "segmentId": "huaian_wuchengen",
+      "chapterZh": "吴承恩与《西游记》",
+      "chapterEn": "Wu Cheng'en and Journey to the West",
+      "question": {
+        "questionId": "huaian_q03",
+        "questionZh": "《西游记》的作者吴承恩是哪里人？",
+        "questionEn": "Where was Wu Cheng'en, the author of Journey to the West, from?",
+        "options": [
+          {
+            "optionId": "nanjing",
+            "textZh": "A. 南京人",
+            "textEn": "A. Nanjing"
+          },
+          {
+            "optionId": "suzhou",
+            "textZh": "B. 苏州人",
+            "textEn": "B. Suzhou"
+          },
+          {
+            "optionId": "huaian",
+            "textZh": "C. 淮安人",
+            "textEn": "C. Huai'an"
+          },
+          {
+            "optionId": "yangzhou",
+            "textZh": "D. 扬州人",
+            "textEn": "D. Yangzhou"
+          }
+        ],
+        "correctOptionId": "huaian",
+        "successZh": "答对啦！吴承恩的故居就在淮安河下古镇哦！",
+        "successEn": "Correct! Wu Cheng'en's former residence is in Hexia Ancient Town, Huai'an."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 19.0,
+          "chinese": "淮安孕育了吴承恩，也留下了《西游记》的文学想象。",
+          "english": "Huai'an was home to Wu Cheng'en and nurtured the imagination behind Journey to the West."
+        },
+        {
+          "startTime": 19.0,
+          "endTime": 38.8,
+          "chinese": "今天，人们仍可在河下古镇探访他的故居。",
+          "english": "Today, visitors can explore his former residence in Hexia Ancient Town."
+        }
+      ],
+      "mediaFile": "huaian_03.mp4",
+      "sourceGuid": "9fd86c748b4bf6b4ca8e5e6d446c1b48"
+    },
+    {
+      "segmentId": "huaian_cuisine",
+      "chapterZh": "淮扬味道",
+      "chapterEn": "Flavors of Huai'an",
+      "question": {
+        "questionId": "huaian_q04",
+        "questionZh": "我想吃一（  ）长鱼面。",
+        "questionEn": "I would like a (  ) of eel noodles.",
+        "options": [
+          {
+            "optionId": "bowl",
+            "textZh": "碗",
+            "textEn": "bowl"
+          },
+          {
+            "optionId": "dish",
+            "textZh": "道",
+            "textEn": "dish"
+          },
+          {
+            "optionId": "plate",
+            "textZh": "盘",
+            "textEn": "plate"
+          },
+          {
+            "optionId": "generic",
+            "textZh": "个",
+            "textEn": "item"
+          }
+        ],
+        "correctOptionId": "bowl",
+        "successZh": "你已经是淮安美食小达人啦！",
+        "successEn": "You are becoming a Huai'an food expert!"
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 26.0,
+          "chinese": "长鱼面以鲜香的鳝鱼和爽滑面条组成，是淮安特色味道。",
+          "english": "Eel noodles combine savory eel with smooth noodles in a signature Huai'an dish."
+        },
+        {
+          "startTime": 26.0,
+          "endTime": 53.8,
+          "chinese": "一碗热面承载着当地人的饮食记忆。",
+          "english": "A warm bowl carries the food memories of local families."
+        }
+      ],
+      "mediaFile": "huaian_04.mp4",
+      "sourceGuid": "a3b31e1c0e856b44bab61832e4f99bd8"
+    },
+    {
+      "segmentId": "huaian_boundary",
+      "chapterZh": "南北分界",
+      "chapterEn": "Where North Meets South",
+      "question": {
+        "questionId": "huaian_q05",
+        "questionZh": "中国南北地理分界线“秦岭—淮河一线”经过下面哪座城市？",
+        "questionEn": "Which city lies along China's Qinling–Huai River geographical divide?",
+        "options": [
+          {
+            "optionId": "suzhou",
+            "textZh": "A. 苏州",
+            "textEn": "A. Suzhou"
+          },
+          {
+            "optionId": "huaian",
+            "textZh": "B. 淮安",
+            "textEn": "B. Huai'an"
+          },
+          {
+            "optionId": "nanjing",
+            "textZh": "C. 南京",
+            "textEn": "C. Nanjing"
+          },
+          {
+            "optionId": "wuxi",
+            "textZh": "D. 无锡",
+            "textEn": "D. Wuxi"
+          }
+        ],
+        "correctOptionId": "huaian",
+        "successZh": "太厉害啦！淮安可是中国南北分界的标志性城市哦！",
+        "successEn": "Well done! Huai'an is a landmark city on China's north–south geographical divide."
+      },
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 25.0,
+          "chinese": "淮河不仅是一条河流，也常被视为中国南北地理分界。",
+          "english": "The Huai River is more than a waterway; it is widely regarded as part of China's north–south divide."
+        },
+        {
+          "startTime": 25.0,
+          "endTime": 52.8,
+          "chinese": "淮安因此兼具南北方的自然景观、饮食与生活气息。",
+          "english": "Huai'an therefore blends northern and southern landscapes, food traditions, and ways of life."
+        }
+      ],
+      "mediaFile": "huaian_05.mp4",
+      "sourceGuid": "a5f19da47dbe2ef409ea543107907d24"
+    },
+    {
+      "segmentId": "huaian_ending",
+      "chapterZh": "淮安印象",
+      "chapterEn": "Memories of Huai'an",
+      "subtitles": [
+        {
+          "startTime": 0.0,
+          "endTime": 12.0,
+          "chinese": "运河、古镇、文学与美食共同构成了淮安的城市记忆。",
+          "english": "Canals, ancient streets, literature, and cuisine shape Huai'an's urban memory."
+        },
+        {
+          "startTime": 12.0,
+          "endTime": 23.8,
+          "chinese": "下一站，让我们继续发现江南城市的不同风貌。",
+          "english": "At the next stop, we will discover another face of Jiangnan."
+        }
+      ],
+      "mediaFile": "huaian_06.mp4",
+      "sourceGuid": "beb0e5bc8999c7849bfb73f8ad866040"
+    }
+  ]
+}

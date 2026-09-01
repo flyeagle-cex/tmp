@@ -1,0 +1,56 @@
+{
+    "unityVersion": "6000.3.22f1",
+    "generatedAt": "2026-09-01 11:00:52",
+    "cities": [
+        {
+            "scene": "Assets/Scenes/1.unity",
+            "cityId": "yangzhou",
+            "segments": 6,
+            "questions": 5,
+            "subtitleCues": 12,
+            "videosWithAudio": 6,
+            "passed": true
+        },
+        {
+            "scene": "Assets/Scenes/2.unity",
+            "cityId": "huaian",
+            "segments": 6,
+            "questions": 5,
+            "subtitleCues": 12,
+            "videosWithAudio": 6,
+            "passed": true
+        },
+        {
+            "scene": "Assets/Scenes/3.unity",
+            "cityId": "wuxi",
+            "segments": 5,
+            "questions": 4,
+            "subtitleCues": 10,
+            "videosWithAudio": 5,
+            "passed": true
+        },
+        {
+            "scene": "Assets/Scenes/4.unity",
+            "cityId": "suzhou",
+            "segments": 7,
+            "questions": 6,
+            "subtitleCues": 14,
+            "videosWithAudio": 7,
+            "passed": true
+        },
+        {
+            "scene": "Assets/Scenes/5.unity",
+            "cityId": "nanjing",
+            "segments": 5,
+            "questions": 4,
+            "subtitleCues": 10,
+            "videosWithAudio": 5,
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "warnings": [
+        "Nanjing legacy completeButton was null; the shared runtime completion view replaces it."
+    ],
+    "passed": true
+}

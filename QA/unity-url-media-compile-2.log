@@ -1,0 +1,74 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.22f1 (1c726e1fb402) revision 1864302'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-chenerxiao" at "2026-09-01T02:33:53.343849Z"
+OS: 'Windows 11  (10.0.26100) CoreCountrySpecific' Language: 'zh' Physical Memory: 32189 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-09-01T02:33:53Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 41500, path: "F:/Unity/Editors/6000.3.22f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              c841fd9f82984593adb4ad4092418e0c
+  Correlation Id:          21ce66806cb4f0e0de4a8465432021c3
+  External correlation Id: 6325735663142785469
+  Machine Id:              WJ2875xEfEXUUNyw84We4RjCHc8=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-chenerxiao" (connect: 0.00s, validation: 0.04s, handshake: 0.12s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-chenerxiao-notifications" at "2026-09-01T02:33:53.5028484Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Client] Successfully updated license, isAsync: False, time: 0.05
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Module] Licensing Background thread has ended after 0.27s
+
+COMMAND LINE ARGUMENTS:
+F:\Unity\Editors\6000.3.22f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject
+-logFile
+C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject\QA\unity-url-media-compile-2.log
+Successfully changed project path to: C:\Users\chenerxiao\Desktop\新文化大赛\JiangnanProject
+C:/Users/chenerxiao/Desktop/新文化大赛/JiangnanProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+No valid Unity Editor license found. Please activate your license.
+Exiting without the bug reporter. Application will terminate with return code 198
