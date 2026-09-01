@@ -3,3 +3,9 @@
 *.otf filter=lfs diff=lfs merge=lfs -text
 *.pdf filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
+Builds/**/*.dll filter=lfs diff=lfs merge=lfs -text
+Builds/**/*.wasm filter=lfs diff=lfs merge=lfs -text
+Builds/**/*.data filter=lfs diff=lfs merge=lfs -text
+Builds/**/*.assets filter=lfs diff=lfs merge=lfs -text
+Builds/**/*.resS filter=lfs diff=lfs merge=lfs -text
+Builds/**/*.exe filter=lfs diff=lfs merge=lfs -text
