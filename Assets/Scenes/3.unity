@@ -259,13 +259,14 @@ MonoBehaviour:
   completeButton: {fileID: 944267218}
   quizList:
   - videoClip: {fileID: 32900000, guid: 03ed3c03324e8084c9314c4f87882fd0, type: 3}
-    question: "\u9F0B\u5934\u6E1A\u201D\u7684\u540D\u5B57\u4E2D\uFF0C\u201C\u6E1A\u201D\u662F\u4EC0\u4E48\u610F\u601D\uFF1F"
+    question: "\u201C\u9F0B\u5934\u6E1A\u201D\u7684\u540D\u5B57\u4E2D\uFF0C\u201C\u6E1A\u201D\u662F\u4EC0\u4E48\u610F\u601D\uFF1F"
     answers:
     - "A. \u4E00\u79CD\u5927\u9C7C"
     - "B. \u6C34\u4E2D\u7684\u5C0F\u5757\u9646\u5730"
     - "C. \u4E00\u5EA7\u9AD8\u5C71"
     - "D. \u4E00\u79CD\u8239"
     correctIndex: 1
+    allowMultipleAnswers: 0
     questionEnglish: "In the name Yuantouzhu, what does the character \u201Czhu\u201D
       mean?"
     answersEnglish:
@@ -282,6 +283,7 @@ MonoBehaviour:
     - "\u6B63\u786E "
     - "\u9519\u8BEF"
     correctIndex: 0
+    allowMultipleAnswers: 0
     questionEnglish: Compared with xiaolongbao from other regions, Wuxi xiaolongbao
       is best known for its sweeter flavor.
     answersEnglish:
@@ -298,7 +300,8 @@ MonoBehaviour:
     - "B. \u590F\u5929"
     - "C. \u79CB\u5929"
     - "D. \u51AC\u5929"
-    correctIndex: 0
+    correctIndex: 2
+    allowMultipleAnswers: 0
     questionEnglish: In which season are Chinese mitten crabs at their richest?
     answersEnglish:
     - A. Spring
@@ -308,14 +311,16 @@ MonoBehaviour:
     successMessage: "\u4E00\u53EA\u87F9\u80FD\u5403\u4E0A\u4E00\u4E2A\u5C0F\u65F6\uFF01"
     successMessageEnglish: A single crab can be enjoyed slowly for an entire hour!
   - videoClip: {fileID: 32900000, guid: 5a25994caf4ff7947b12e10b17ced11f, type: 3}
-    question: "\u8FD9\u9996\u66F2\u5B50\u7ED9\u4F60\u4EC0\u4E48\u611F\u89C9\uFF1F\u8BF7\u7528\u4E00\u4E2A\u8BCD\u6765\u5F62\u5BB9"
+    question: "\u8FD9\u9996\u66F2\u5B50\u7ED9\u4F60\u4EC0\u4E48\u611F\u89C9\uFF1F\u8BF7\u9009\u62E9\u4E00\u4E2A\u6216\u591A\u4E2A\u8BCD\u6765\u5F62\u5BB9\u3002"
     answers:
     - "A. \u60B2\u4F24"
     - "B. \u6E29\u67D4"
     - "C. \u5B81\u9759"
     - "D. \u5E78\u798F"
     correctIndex: 2
-    questionEnglish: How does this piece of music make you feel? Choose one word.
+    allowMultipleAnswers: 1
+    questionEnglish: How does this piece of music make you feel? Choose one or more
+      words.
     answersEnglish:
     - A. Sorrowful
     - B. Gentle
@@ -327,6 +332,7 @@ MonoBehaviour:
     question: 
     answers: []
     correctIndex: 0
+    allowMultipleAnswers: 0
     questionEnglish: 
     answersEnglish:
     - 

@@ -1,0 +1,10 @@
+{
+  "clipsAndAudio": true,
+  "quizCorrections": true,
+  "multipleChoice": true,
+  "bilingualSubmit": true,
+  "noOverlap": true,
+  "submitOnScreen": true,
+  "passed": true,
+  "errors": [""]
+}

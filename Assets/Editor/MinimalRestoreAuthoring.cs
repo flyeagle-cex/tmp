@@ -58,12 +58,46 @@ public static class MinimalRestoreAuthoring
             throw new InvalidDataException("Expected 24 localized questions, wrote " + localizedQuestions + ".");
         }
 
+        ApplyQuizCorrections();
+
         string qa = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "QA");
         Directory.CreateDirectory(qa);
         File.WriteAllText(Path.Combine(qa, "authoring-result.txt"),
             "MINIMAL_RESTORE_AUTHORING_PASS\nlocalizedQuestions=" + localizedQuestions + "\n");
         AssetDatabase.SaveAssets();
         Debug.Log("MINIMAL_RESTORE_AUTHORING_PASS localizedQuestions=" + localizedQuestions);
+    }
+
+    public static void ApplyInteractionFixes()
+    {
+        ApplyQuizCorrections();
+        AssetDatabase.SaveAssets();
+        Debug.Log("INTERACTION_FIXES_APPLIED");
+    }
+
+    private static void ApplyQuizCorrections()
+    {
+        Scene yangzhou = EditorSceneManager.OpenScene("Assets/Scenes/1.unity", OpenSceneMode.Single);
+        VideoQuizManager yangzhouQuiz = UnityEngine.Object.FindFirstObjectByType<VideoQuizManager>();
+        if (yangzhouQuiz == null || yangzhouQuiz.quizList.Count < 2)
+            throw new InvalidDataException("Yangzhou quiz data is incomplete.");
+        yangzhouQuiz.quizList[1].question = "“瘦西湖”这个名字里的“瘦”是什么意思？";
+        EditorUtility.SetDirty(yangzhouQuiz);
+        EditorSceneManager.MarkSceneDirty(yangzhou);
+        EditorSceneManager.SaveScene(yangzhou);
+
+        Scene wuxi = EditorSceneManager.OpenScene("Assets/Scenes/3.unity", OpenSceneMode.Single);
+        VideoQuizManager wuxiQuiz = UnityEngine.Object.FindFirstObjectByType<VideoQuizManager>();
+        if (wuxiQuiz == null || wuxiQuiz.quizList.Count < 4)
+            throw new InvalidDataException("Wuxi quiz data is incomplete.");
+        wuxiQuiz.quizList[0].question = "“鼋头渚”的名字中，“渚”是什么意思？";
+        wuxiQuiz.quizList[2].correctIndex = 2;
+        wuxiQuiz.quizList[3].allowMultipleAnswers = true;
+        wuxiQuiz.quizList[3].question = "这首曲子给你什么感觉？请选择一个或多个词来形容。";
+        wuxiQuiz.quizList[3].questionEnglish = "How does this piece of music make you feel? Choose one or more words.";
+        EditorUtility.SetDirty(wuxiQuiz);
+        EditorSceneManager.MarkSceneDirty(wuxi);
+        EditorSceneManager.SaveScene(wuxi);
     }
 
     public static void Validate()
@@ -127,6 +161,21 @@ public static class MinimalRestoreAuthoring
                         {
                             englishQuestions++;
                         }
+                    }
+
+                    if (sceneName == "1" && manager.quizList.Count > 1 &&
+                        manager.quizList[1].question != "“瘦西湖”这个名字里的“瘦”是什么意思？")
+                    {
+                        errors.Add("Yangzhou: Slender West Lake question punctuation is not fixed.");
+                    }
+                    if (sceneName == "3" && manager.quizList.Count > 3)
+                    {
+                        if (manager.quizList[0].question != "“鼋头渚”的名字中，“渚”是什么意思？")
+                            errors.Add("Wuxi: Yuantouzhu question punctuation is not fixed.");
+                        if (manager.quizList[2].correctIndex != 2)
+                            errors.Add("Wuxi: crab question answer must be C (Autumn).");
+                        if (!manager.quizList[3].allowMultipleAnswers)
+                            errors.Add("Wuxi: Erquan Yingyue question is not configured for multiple answers.");
                     }
                 }
 

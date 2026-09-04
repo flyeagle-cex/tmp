@@ -39,6 +39,7 @@ public class VideoQuizManager : MonoBehaviour
         [TextArea(2, 3)] public string question;
         public string[] answers = new string[4];
         public int correctIndex;
+        public bool allowMultipleAnswers;
 
         [Header("English UI text")]
         [TextArea(2, 3)] public string questionEnglish;
@@ -55,6 +56,9 @@ public class VideoQuizManager : MonoBehaviour
     private bool isWaitingForRetry = false;
     private string originalCompletePopupText;
     private string originalCompleteButtonText;
+    private readonly HashSet<int> selectedAnswerIndices = new HashSet<int>();
+    private Button multipleSubmitButton;
+    private Text multipleSubmitButtonText;
 
     void Start()
     {
@@ -188,7 +192,7 @@ public class VideoQuizManager : MonoBehaviour
             if (i < answerCount && !string.IsNullOrEmpty(data.answers[i]))
             {
                 answerButtons[i].gameObject.SetActive(true);
-                answerButtons[i].GetComponentInChildren<Text>().text = GetAnswer(data, i);
+                answerButtons[i].GetComponentInChildren<Text>().text = GetAnswerDisplay(data, i);
             }
             else
             {
@@ -201,6 +205,8 @@ public class VideoQuizManager : MonoBehaviour
         questionPanel.SetActive(true);
         isAnswering = true;
         isWaitingForRetry = false;
+        selectedAnswerIndices.Clear();
+        ConfigureMultipleAnswerMode(data);
     }
 
     // ===== 点击选项 =====
@@ -209,6 +215,16 @@ public class VideoQuizManager : MonoBehaviour
         if (!isAnswering || isWaitingForRetry) return;
 
         QuizData data = quizList[currentIndex];
+        if (data.allowMultipleAnswers)
+        {
+            if (selectedAnswerIndices.Contains(selectedIndex))
+                selectedAnswerIndices.Remove(selectedIndex);
+            else
+                selectedAnswerIndices.Add(selectedIndex);
+            RefreshMultipleAnswerLabels(data);
+            return;
+        }
+
         bool isCorrect = (selectedIndex == data.correctIndex);
 
         if (isCorrect)
@@ -314,7 +330,7 @@ public class VideoQuizManager : MonoBehaviour
             if (i < answerCount && !string.IsNullOrEmpty(data.answers[i]))
             {
                 answerButtons[i].gameObject.SetActive(true);
-                answerButtons[i].GetComponentInChildren<Text>().text = GetAnswer(data, i);
+                answerButtons[i].GetComponentInChildren<Text>().text = GetAnswerDisplay(data, i);
             }
             else
             {
@@ -322,6 +338,7 @@ public class VideoQuizManager : MonoBehaviour
             }
         }
 
+        ConfigureMultipleAnswerMode(data);
         Debug.Log("🔄 重新答题");
     }
 
@@ -342,6 +359,8 @@ public class VideoQuizManager : MonoBehaviour
                 completePopupText.text = LanguageManager.EnsureExists().IsEnglish ? "🎉 Continue to the next city" : "🎉 前往下一站";
             }
         }
+
+        if (multipleSubmitButton != null) multipleSubmitButton.gameObject.SetActive(false);
         RefreshCompleteButtonText();
         Debug.Log("🏁 所有视频已完成！");
     }
@@ -386,6 +405,116 @@ public class VideoQuizManager : MonoBehaviour
         return data.answers[index];
     }
 
+    private string GetAnswerDisplay(QuizData data, int index)
+    {
+        string answer = GetAnswer(data, index);
+        if (!data.allowMultipleAnswers) return answer;
+        return (selectedAnswerIndices.Contains(index) ? "[X] " : "[ ] ") + answer;
+    }
+
+    private void ConfigureMultipleAnswerMode(QuizData data)
+    {
+        if (!data.allowMultipleAnswers)
+        {
+            if (multipleSubmitButton != null) multipleSubmitButton.gameObject.SetActive(false);
+            return;
+        }
+
+        EnsureMultipleSubmitButton();
+        if (multipleSubmitButton != null)
+        {
+            multipleSubmitButton.gameObject.SetActive(true);
+            RefreshMultipleSubmitLabel();
+        }
+        RefreshMultipleAnswerLabels(data);
+    }
+
+    private void EnsureMultipleSubmitButton()
+    {
+        if (multipleSubmitButton != null || answerButtons == null || answerButtons.Length == 0) return;
+        Button template = answerButtons[answerButtons.Length - 1];
+        if (template == null) return;
+
+        Transform submitParent = questionPanel != null ? questionPanel.transform : template.transform.parent;
+        multipleSubmitButton = Instantiate(template, submitParent, false);
+        multipleSubmitButton.name = "MultipleAnswerSubmitButton";
+        multipleSubmitButton.onClick = new Button.ButtonClickedEvent();
+        multipleSubmitButton.onClick.AddListener(OnMultipleAnswerSubmitted);
+        multipleSubmitButtonText = multipleSubmitButton.GetComponentInChildren<Text>(true);
+
+        RectTransform templateRect = template.GetComponent<RectTransform>();
+        RectTransform submitRect = multipleSubmitButton.GetComponent<RectTransform>();
+        if (templateRect != null && submitRect != null)
+        {
+            RectTransform answerGroup = templateRect.parent as RectTransform;
+            submitRect.anchorMin = new Vector2(0.5f, 0.5f);
+            submitRect.anchorMax = new Vector2(0.5f, 0.5f);
+            submitRect.pivot = new Vector2(0.5f, 0.5f);
+            submitRect.sizeDelta = templateRect.rect.size;
+            submitRect.localScale = templateRect.localScale;
+
+            if (answerGroup != null && answerGroup.parent == submitRect.parent)
+            {
+                const float gap = 16f;
+                float groupBottom = answerGroup.anchoredPosition.y - answerGroup.rect.height * answerGroup.pivot.y;
+                submitRect.anchoredPosition = new Vector2(
+                    answerGroup.anchoredPosition.x,
+                    groupBottom - gap - submitRect.rect.height * 0.5f);
+            }
+            else
+            {
+                submitRect.anchoredPosition = templateRect.anchoredPosition +
+                                              new Vector2(0f, -Mathf.Abs(templateRect.rect.height) - 16f);
+            }
+        }
+        multipleSubmitButton.transform.SetAsLastSibling();
+    }
+
+    private void OnMultipleAnswerSubmitted()
+    {
+        if (!isAnswering || currentIndex >= quizList.Count || !quizList[currentIndex].allowMultipleAnswers) return;
+        if (selectedAnswerIndices.Count == 0)
+        {
+            if (errorPopup != null)
+            {
+                errorPopup.SetActive(true);
+                if (errorPopupText != null)
+                    errorPopupText.text = LanguageManager.EnsureExists().IsEnglish
+                        ? "Please select at least one answer."
+                        : "请至少选择一项。";
+                StartCoroutine(HideMultipleSelectionError());
+            }
+            return;
+        }
+
+        isAnswering = false;
+        questionPanel.SetActive(false);
+        ShowCorrectPopup();
+        StartCoroutine(ShowSuccessPopupAfterDelay(1f));
+    }
+
+    private IEnumerator HideMultipleSelectionError()
+    {
+        yield return new WaitForSeconds(1.5f);
+        if (errorPopup != null) errorPopup.SetActive(false);
+    }
+
+    private void RefreshMultipleAnswerLabels(QuizData data)
+    {
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            if (answerButtons[i] == null || !answerButtons[i].gameObject.activeSelf || i >= data.answers.Length) continue;
+            Text label = answerButtons[i].GetComponentInChildren<Text>();
+            if (label != null) label.text = GetAnswerDisplay(data, i);
+        }
+    }
+
+    private void RefreshMultipleSubmitLabel()
+    {
+        if (multipleSubmitButtonText == null) return;
+        multipleSubmitButtonText.text = LanguageManager.EnsureExists().IsEnglish ? "CONFIRM" : "确认选择";
+    }
+
     private string GetSuccessMessage(QuizData data)
     {
         return LanguageManager.EnsureExists().IsEnglish && !string.IsNullOrEmpty(data.successMessageEnglish)
@@ -406,9 +535,10 @@ public class VideoQuizManager : MonoBehaviour
                     if (answerButtons[i] != null && answerButtons[i].gameObject.activeSelf && i < data.answers.Length)
                     {
                         Text label = answerButtons[i].GetComponentInChildren<Text>();
-                        if (label != null) label.text = GetAnswer(data, i);
+                        if (label != null) label.text = GetAnswerDisplay(data, i);
                     }
                 }
+                ConfigureMultipleAnswerMode(data);
             }
             if (successPopup != null && successPopup.activeSelf && successPopupText != null)
             {
@@ -432,6 +562,10 @@ public class VideoQuizManager : MonoBehaviour
                     : "🎉 Continue to the next city")
                 : (!string.IsNullOrEmpty(originalCompletePopupText) ? originalCompletePopupText : "🎉 前往下一站");
             RefreshCompleteButtonText();
+        }
+        if (multipleSubmitButton != null && multipleSubmitButton.gameObject.activeSelf)
+        {
+            RefreshMultipleSubmitLabel();
         }
     }
 

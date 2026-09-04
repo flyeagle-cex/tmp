@@ -266,6 +266,7 @@ MonoBehaviour:
     - "C. \u4E0B\u96E8\u5929\u79EF\u6C34\u5F62\u6210\u7684\u6CB3\u6D41"
     - "D. \u6D77\u6C34\u5012\u704C\u5F62\u6210\u7684\u6CB3\u6D41"
     correctIndex: 1
+    allowMultipleAnswers: 0
     questionEnglish: What kind of waterway is the Grand Canal?
     answersEnglish:
     - A. A river formed naturally
@@ -276,13 +277,14 @@ MonoBehaviour:
     successMessageEnglish: Excellent! The Grand Canal is an extraordinary feat created
       by generations of people.
   - videoClip: {fileID: 32900000, guid: 694a2aa871c26a64ba962ef5d52ea921, type: 3}
-    question: "\u7626\u897F\u6E56\"\u8FD9\u4E2A\u540D\u5B57\u91CC\u7684\"\u7626\"\u662F\u4EC0\u4E48\u610F\u601D\uFF1F"
+    question: "\u201C\u7626\u897F\u6E56\u201D\u8FD9\u4E2A\u540D\u5B57\u91CC\u7684\u201C\u7626\u201D\u662F\u4EC0\u4E48\u610F\u601D\uFF1F"
     answers:
     - "A. \u6E56\u6C34\u5F88\u6D45\uFF0C\u5FEB\u8981\u5E72\u6DB8\u4E86"
     - "B. \u6E56\u5F62\u72ED\u957F\u79C0\u6C14\uFF0C\u548C\u676D\u5DDE\u897F\u6E56\u76F8\u6BD4\u66F4\"\u82D7\u6761\""
     - "C. \u6E56\u8FB9\u7684\u4EBA\u90FD\u5F88\u7626"
     - "D. \u6E56\u91CC\u7684\u9C7C\u5F88\u7626"
     correctIndex: 1
+    allowMultipleAnswers: 0
     questionEnglish: "What does \u201Cslender\u201D mean in the name Slender West
       Lake?"
     answersEnglish:
@@ -299,6 +301,7 @@ MonoBehaviour:
     - "\u6B63\u786E"
     - "\u9519\u8BEF"
     correctIndex: 1
+    allowMultipleAnswers: 0
     questionEnglish: Yangzhou lacquerware is simple to make and can be finished in
       one day.
     answersEnglish:
@@ -315,6 +318,7 @@ MonoBehaviour:
     - "\u5757"
     - "\u4E2A"
     correctIndex: 0
+    allowMultipleAnswers: 0
     questionEnglish: The shredded tofu in this (  ) of blanched tofu is cut so finely!
     answersEnglish:
     - dish
@@ -332,6 +336,7 @@ MonoBehaviour:
     - "C. \u98CE"
     - "D. \u4E91"
     correctIndex: 0
+    allowMultipleAnswers: 0
     questionEnglish: "Complete the line: \u201CThe spring river rises level with
       the sea; above the sea the bright moon rises with the ____.\u201D"
     answersEnglish:
@@ -345,6 +350,7 @@ MonoBehaviour:
     question: 
     answers: []
     correctIndex: 0
+    allowMultipleAnswers: 0
     questionEnglish: 
     answersEnglish:
     - 
